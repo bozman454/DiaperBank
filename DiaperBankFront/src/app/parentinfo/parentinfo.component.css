@@ -1,0 +1,16 @@
+.parentForm {
+    padding: 50px
+}
+
+mat-divider {
+    padding-bottom: 20px
+}
+
+.childInput {
+    padding-left: 25px
+}
+
+.right {
+    padding-top: 5px;
+    float: right;
+}
