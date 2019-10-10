@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-parentinfo',
@@ -7,7 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentinfoComponent implements OnInit {
 
-  constructor() { }
+  private parentForm
+
+  constructor() { 
+    this.parentForm = new FormGroup({
+      parentFirstName: new FormControl(),
+      parentLastName: new FormControl(),
+      parentAddress: new FormControl(),
+      parentCity: new FormControl(),
+      parentState: new FormControl(),
+      parentZIP: new FormControl(),
+      parentCounty: new FormControl(),
+      parentPhone: new FormControl()
+    });
+  }
 
   ngOnInit() {
   }

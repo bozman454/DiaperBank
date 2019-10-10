@@ -1,4 +1,4 @@
-<div class="parentForm" style="width: 800px; align-content: center; display: inline-block; position: absolute; left: 50%; margin-left: -450px">
+<div [formGroup]="parentForm" class="parentForm" style="width: 800px; align-content: center; display: inline-block; position: absolute; left: 50%; margin-left: -450px">
         <h3>Parent Information</h3>
         <mat-divider></mat-divider>
 
@@ -33,11 +33,9 @@
         <br>
 
         <mat-form-field style="width: 100%">
-                <input matInput placeholder="Phone Number" formControlName="parentPhone">
+                <input matInput id="phone" type="text" name="phone" placeholder="Phone: xxx-xxx-xxxx" formControlName="parentPhone">
         </mat-form-field>
 
-        <h3>Children Information</h3>
-        <mat-divider></mat-divider>
         <app-childinfo></app-childinfo>
 
         <button mat-raised-button style="width: 200px" class="right">Submit</button>

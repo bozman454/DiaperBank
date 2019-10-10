@@ -1,11 +1,23 @@
+<div [formGroup]="childForm">
+<h3>Children Information</h3>
+<mat-divider></mat-divider>   
+
+
+    <div *ngFor="let child of children">
+        <span class="col s11"> {{ child.fname }} {{ child.lname }} {{ child.DOB}}</span>
+        <a class="col s1" (click)="deleteChild(child)">&#x2716;</a>
+    </div>
+<br><br>
+
 <mat-form-field style="width: 36.4%">
-    <input matInput placeholder="First Name" formControlName="childFirstName">
+    <input matInput placeholder="First Name" formControlName="childFirstName" #fname>
 </mat-form-field>
 <mat-form-field class="childInput" style="width: 36.4%">
-    <input matInput placeholder="Last Name" formControlName="childLastName">
+    <input matInput placeholder="Last Name" formControlName="childLastName" #lname>
 </mat-form-field>
 <mat-form-field class="childInput" style="width: 20%">
-    <input matInput placeholder="DOB (MM/DD/YYYY)" formControlName="childDOB">
+    <input matInput placeholder="DOB (MM/DD/YYYY)" formControlName="childDOB" #DOB>
 </mat-form-field>
 <br>
-<button mat-mini-fab>+</button>
+<button mat-mini-fab (click)="addChild(fname.value, lname.value, DOB.value)">+</button>
+</div>
