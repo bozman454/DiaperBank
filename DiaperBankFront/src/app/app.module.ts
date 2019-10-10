@@ -12,6 +12,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { LoginComponent } from './login/login.component';
 
+import { HttpClientModule } from '@angular/common/http'; 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,8 @@ import { LoginComponent } from './login/login.component';
     MatFormFieldModule,
     MatInputModule,
     MatDividerModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
