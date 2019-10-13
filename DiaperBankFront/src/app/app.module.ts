@@ -8,6 +8,9 @@ import { ChildinfoComponent } from './childinfo/childinfo.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+
+
+import {MatMenuModule} from '@angular/material/menu'; 
 import { MatDividerModule } from '@angular/material/divider'; 
 import { MatButtonModule } from '@angular/material/button';
 import { LoginComponent } from './login/login.component';
@@ -30,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatDividerModule,
     MatButtonModule,
+    MatMenuModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule

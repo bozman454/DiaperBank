@@ -1,2 +1,7 @@
-<app-login></app-login>
-<app-parentinfo></app-parentinfo>
+<button mat-button [matMenuTriggerFor]="menu">Family Registration</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="/FamilyReg">Family Registration without scanner</button>
+  <button mat-menu-item>Family Registration with scanner</button>
+</mat-menu>
+
+<router-outlet></router-outlet>
