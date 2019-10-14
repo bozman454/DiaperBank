@@ -18,13 +18,15 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 
 import { HttpClientModule } from '@angular/common/http'; 
 import { RegisterService } from './register.service';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ParentinfoComponent,
     LoginComponent,
-    ChildinfoComponent
+    ChildinfoComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
