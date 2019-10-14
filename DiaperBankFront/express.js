@@ -29,23 +29,22 @@ port = 3000;
 
 
 app.post('/addpatron', function (req, res) {
-  console.log('head: ' + head)
   
   if(head == false){
     var writer = csvWriter2({sendHeaders: false})
-    console.log('No headers...')
+
   }
   if(head == true){
     var writer = csvWriter2({sendHeaders: true})
-    console.log('Send headers...')
+
     head = false
-    console.log('head2: ' + head)
+
   }
 
   console.log('Attempting to post...')
-  console.log('req.body: ' + JSON.stringify(req.body))
   writer.pipe(fs.createWriteStream('patrons.csv', { flags: 'a' }))
 
+  
   writer.write(req.body)
   writer.end()
 
