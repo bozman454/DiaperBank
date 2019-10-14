@@ -17,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 
 import { HttpClientModule } from '@angular/common/http'; 
+import { RegisterService } from './register.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
