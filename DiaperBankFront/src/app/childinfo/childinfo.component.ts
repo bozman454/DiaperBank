@@ -65,15 +65,9 @@ export class ChildinfoComponent implements OnInit {
       this.children2.push(JSON.stringify({DOB}))
 
 
-
-
-
       this.parent.childArray.push(fname)
       this.parent.childArray.push(lname)
       this.parent.childArray.push(DOB)
-
-
-
       
     }
 

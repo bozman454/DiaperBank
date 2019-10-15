@@ -8,15 +8,17 @@ export class RegisterService {
 
   constructor(public http: HttpClient) { }
 
+
+  //Passes the parent and child information to the express server
   pass(first, last, address, city, state, zip, county, phone, child){
     console.log('Service: ' + {first, last, address, city, state, zip, county, phone, child})
     console.log('Trial: ' + child + ' ' + child.length)
   
-    var jsonObj = {first, last, address, city, state, zip, county, phone}
+    var jsonObj = {first, last, address, city, state, zip, county, phone} //The parent part of the json
     var childnum = 1;
     var childComp = 1;
     var childInfo ='';
-
+    //Separates out each child individually in the json so that each one is added to a different cell
     child.forEach(element => {
       if(childComp == 0){
         childComp = 1
@@ -46,10 +48,15 @@ export class RegisterService {
 
     return this.http.post('http://localhost:3000/addpatron', jsonObj)
     .subscribe(
-      
 
     )
   }
+
+
+  //Calls the express server to return the already scanned patrons
+  getPreRegistered(){
+    return this.http.get('http://localhost:3000/preregistered')
+  }  
  
 
 }

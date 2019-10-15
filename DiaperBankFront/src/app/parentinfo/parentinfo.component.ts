@@ -20,7 +20,7 @@ export class ParentinfoComponent implements OnInit {
 
   private parentForm
   childArray: string[] = [];
-  childArray2 = [];
+  patronList;
   childfirst;
   childlast;
   childbirth;
@@ -60,12 +60,22 @@ export class ParentinfoComponent implements OnInit {
     //this.parentForm.get('parentPhone').setValue(str.replace('/^([0-9])/gi', ''))
   }
 
-  submit(first, last, address, city, state, zip, county, phone){
-    // console.log('Component: ' + first, last, address, city, state, zip, county, phone)
-    // console.log('Child Array... ' + this.childArray)
 
+
+  //Passes the parrent and child information from the html form to the service
+  submit(first, last, address, city, state, zip, county, phone){
     
     this.register.pass(first, last, address, city, state, zip, county, phone, this.childArray)
+
+  }
+
+  //Calls the service to get the already scanned people and subscribes to the returned record
+  showPeople(){
+    this.register.getPreRegistered()
+    .subscribe(record => {
+      this.patronList = record;
+      console.log('showPeople(): ' + this.patronList)
+    })
   }
 
 
