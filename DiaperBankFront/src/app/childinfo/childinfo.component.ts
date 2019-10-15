@@ -28,9 +28,9 @@ export class ChildinfoComponent implements OnInit {
       childDOB: new FormControl()
     });
 
-    this.childForm.get('childFirstName').setValue('Christina');
-    console.log(this.childForm.childFirstName)
-    console.log("Test")
+    // this.childForm.get('childFirstName').setValue('Christina');
+    // console.log(this.childForm.childFirstName)
+    // console.log("Test")
    }
 
   ngOnInit() {
