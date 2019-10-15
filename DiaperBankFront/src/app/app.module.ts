@@ -19,6 +19,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http'; 
 import { RegisterService } from './register.service';
 import { LandingComponent } from './landing/landing.component';
+import { ShowpeopleComponent } from './showpeople/showpeople.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LandingComponent } from './landing/landing.component';
     ParentinfoComponent,
     LoginComponent,
     ChildinfoComponent,
-    LandingComponent
+    LandingComponent,
+    ShowpeopleComponent
   ],
   imports: [
     BrowserModule,
