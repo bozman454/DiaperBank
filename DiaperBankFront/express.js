@@ -70,7 +70,7 @@ const CONNECTION_URL = 'mongodb+srv://Bank:BankInfo_454@persons-1pnrr.mongodb.ne
 //enter database name here
 const DATABASE_NAME = "People";
 
-const COLLECTION_NAME = "Persons";
+const COLLECTION_NAME = "Info";
 
 
 var corsOptions = {
@@ -100,7 +100,7 @@ app.get('/preregistered', (req, res) => {
             console.log(`Displaying everything from ${COLLECTION_NAME}`);
 
             if (result) {
-                console.log('Result' + result)
+                console.log('Result' + JSON.stringify(result))
                 return res.status(200).send(result);
             }
             //client.close();
