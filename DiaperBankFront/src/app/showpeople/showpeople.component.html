@@ -1,0 +1,29 @@
+<table>
+        <thead>
+            <tr>
+              <th>id</th>
+              <th>First</th>
+              <th>Last</th>
+              <th>Address</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Zip</th>
+              <th>County</th>
+              <th>Phone</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let patronList of patronList">
+              <td>{{ patronList.first }}</td>
+              <td>{{ patronList.last }}</td>
+              <td>{{ patronList.address }}</td>
+              <td>{{ patronList.city }}</td>
+              <td>{{ patronList.state }}</td>
+              <td>{{ patronList.zip }}</td>
+              <td>{{ patronList.county }}</td>
+              <td>{{ patronList.phone }}</td>
+              <!-- <td><button type="button" (click)=delete(dataList._id)>Delete</button></td> -->
+            </tr>
+            </tbody>
+      </table>
+<button type='button' (click)=showPeople()>Refresh</button>

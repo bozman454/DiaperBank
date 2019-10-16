@@ -29,9 +29,9 @@ export class ChildinfoComponent implements OnInit {
       childDOB: new FormControl()
     });
 
-    this.childForm.get('childFirstName').setValue('Christina');
-    console.log(this.childForm.childFirstName)
-    console.log("Test")
+    // this.childForm.get('childFirstName').setValue('Christina');
+    // console.log(this.childForm.childFirstName)
+    // console.log("Test")
    }
 
   ngOnInit() {
@@ -64,13 +64,9 @@ export class ChildinfoComponent implements OnInit {
 
       this.parent.childArray.push(child)
 
-
-      // this.parent.childArray.push(fname)
-      // this.parent.childArray.push(lname)
-      // this.parent.childArray.push(DOB)
-
-
-
+      this.parent.childArray2.push(fname)
+      this.parent.childArray2.push(lname)
+      this.parent.childArray2.push(DOB)
       
     }
 

@@ -21,7 +21,8 @@ export class ParentinfoComponent implements OnInit {
 
   private parentForm
   childArray: Array<Child> = []
-  childArray2 = [];
+  childArray2: Array<any> = []
+  patronList;
   childfirst;
   childlast;
   childbirth;
@@ -76,8 +77,17 @@ export class ParentinfoComponent implements OnInit {
     if (confirm(confStr)) {
     // console.log('Component: ' + first, last, address, city, state, zip, county, phone)
     // console.log('Child Array... ' + this.childArray)
-      this.register.pass(first, last, address, city, state, zip, county, phone, this.childArray)
+      this.register.pass(first, last, address, city, state, zip, county, phone, this.childArray2)
     }
+  }
+
+  //Calls the service to get the already scanned people and subscribes to the returned record
+  showPeople(){
+    this.register.getPreRegistered()
+    .subscribe(record => {
+      this.patronList = record;
+      console.log('showPeople(): ' + this.patronList)
+    })
   }
 
 
