@@ -21,7 +21,6 @@ export class ParentinfoComponent implements OnInit {
 
   private parentForm
   childArray: Array<Child> = []
-  childArray2: Array<any> = []
   patronList;
   childfirst;
   childlast;
@@ -77,7 +76,7 @@ export class ParentinfoComponent implements OnInit {
     if (confirm(confStr)) {
     // console.log('Component: ' + first, last, address, city, state, zip, county, phone)
     // console.log('Child Array... ' + this.childArray)
-      this.register.pass(first, last, address, city, state, zip, county, phone, this.childArray2)
+      this.register.pass(first, last, address, city, state, zip, county, phone, this.childArray)
     }
   }
 

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { Child } from './child';
 
 @Injectable({
   providedIn: 'root'
@@ -10,16 +11,22 @@ export class RegisterService {
 
 
   //Passes the parent and child information to the express server
-  pass(first, last, address, city, state, zip, county, phone, child){
-    console.log('Service: ' + {first, last, address, city, state, zip, county, phone, child})
-    console.log('Trial: ' + child + ' ' + child.length)
+  pass(first, last, address, city, state, zip, county, phone, children: Array<Child>){
+    console.log('Service: ' + {first, last, address, city, state, zip, county, phone})
+    //console.log('Trial: ' + child + ' ' + child.length)
   
     var jsonObj = {first, last, address, city, state, zip, county, phone} //The parent part of the json
     var childnum = 1;
     var childComp = 1;
     var childInfo ='';
     //Separates out each child individually in the json so that each one is added to a different cell
-    child.forEach(element => {
+
+    var idx = 1
+    for (var child of children) {
+      jsonObj['child ' + idx++] = child.fname + ' ' + child.lname + ', ' + child.DOB
+    }
+
+    /*child.forEach(element => {
       if(childComp == 0){
         childComp = 1
       }
@@ -41,7 +48,8 @@ export class RegisterService {
         childInfo = childInfo + element + ' '
         childComp++
       }
-    });
+    });*/
+
     console.log('jsonobj: ' + JSON.stringify(jsonObj))
 
 
