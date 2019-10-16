@@ -1,34 +1,3 @@
-<<<<<<< HEAD
-<table>
-        <thead>
-            <tr>
-              <!-- <th>id</th> -->
-              <th>First</th>
-              <th>Last</th>
-              <th>Address</th>
-              <th>City</th>
-              <th>State</th>
-              <th>Zip</th>
-              <th>County</th>
-              <th>Phone</th>
-              <th>Verify</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let patronList of patronList">
-              <td>{{ patronList.first }}</td>
-              <td>{{ patronList.last }}</td>
-              <td>{{ patronList.address }}</td>
-              <td>{{ patronList.city }}</td>
-              <td>{{ patronList.state }}</td>
-              <td>{{ patronList.zip }}</td>
-              <td>{{ patronList.county }}</td>
-              <td>{{ patronList.phone }}</td>
-              <td><button type="button" (click)='verifyPerson(patronList._id,patronList.first,patronList.last,patronList.address,patronList.city,patronList.state,patronList.zip,patronList.county,patronList.phone)'>Delete</button></td>
-            </tr>
-            </tbody>
-      </table>
-=======
 <mat-form-field>
   <input matInput (keyup) = "applyFilter($event.target.value)" placeholder = "Filter">
 </mat-form-field>
@@ -94,5 +63,4 @@
 
 </table>
 
->>>>>>> e795c5a45d164519e1d23a6ee47134f4ca7a60b0
 <button type='button' (click)=showPeople()>Refresh</button>

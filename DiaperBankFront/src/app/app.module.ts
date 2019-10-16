@@ -8,9 +8,11 @@ import { ChildinfoComponent } from './childinfo/childinfo.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule, MatSort } from '@angular/material/sort';
 
 
-import {MatMenuModule} from '@angular/material/menu'; 
+import { MatMenuModule } from '@angular/material/menu'; 
 import { MatDividerModule } from '@angular/material/divider'; 
 import { MatButtonModule } from '@angular/material/button';
 import { LoginComponent } from './login/login.component';
@@ -42,7 +44,10 @@ import { ParentInfoClass } from './parentInfoClass'
     MatMenuModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatSortModule,
+    
   ],
   providers: [ParentInfoClass, RegisterService],
   bootstrap: [AppComponent]
