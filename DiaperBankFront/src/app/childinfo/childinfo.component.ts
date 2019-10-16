@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { ParentinfoComponent } from '../parentinfo/parentinfo.component'
 import { Injectable } from '@angular/core'
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
+import { Child } from '../child';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class ChildinfoComponent implements OnInit {
 
   
   private childForm
-  private children: object[] = []
+  private children: Array<any> = []
   children2 = []
   
   // public parent: ParentinfoComponent
@@ -37,7 +38,7 @@ export class ChildinfoComponent implements OnInit {
   }
 
   getChildren() {
-    return this.children;
+    return this.children
   }
 
   getChildren2(){
@@ -48,11 +49,7 @@ export class ChildinfoComponent implements OnInit {
   addChild(fname, lname, DOB) {
 
     if (fname && lname && DOB) {
-      var child = ({
-        fname: fname,
-        lname: lname,
-        DOB: DOB
-      })
+      var child = new Child(fname, lname, DOB)
 
       this.children.push(child)
 
@@ -65,12 +62,12 @@ export class ChildinfoComponent implements OnInit {
       this.children2.push(JSON.stringify({DOB}))
 
 
+      this.parent.childArray.push(child)
 
 
-
-      this.parent.childArray.push(fname)
-      this.parent.childArray.push(lname)
-      this.parent.childArray.push(DOB)
+      // this.parent.childArray.push(fname)
+      // this.parent.childArray.push(lname)
+      // this.parent.childArray.push(DOB)
 
 
 

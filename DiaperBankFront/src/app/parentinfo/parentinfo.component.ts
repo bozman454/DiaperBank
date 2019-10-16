@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { RegisterService } from '../register.service'
-import { ChildinfoComponent } from '../childinfo/childinfo.component'
 import { Injectable } from '@angular/core'
+import { findReadVarNames } from '@angular/compiler/src/output/output_ast';
+import { Child } from '../child';
 
 
 @Component({
@@ -19,7 +20,7 @@ import { Injectable } from '@angular/core'
 export class ParentinfoComponent implements OnInit {
 
   private parentForm
-  childArray: string[] = [];
+  childArray: Array<Child> = []
   childArray2 = [];
   childfirst;
   childlast;
@@ -61,11 +62,22 @@ export class ParentinfoComponent implements OnInit {
   }
 
   submit(first, last, address, city, state, zip, county, phone){
+    var confStr = 'Name: ' + first + ' ' + last + '\nAddr: ' + address + '\nCity: ' + city +
+    '\nState: ' + state + '\nZIP: ' + zip + '\nCounty: ' + county  + '\nPhone: ' + phone
+
+    console.log(this.childArray)
+
+    for (var child of this.childArray) {
+      confStr += '\nChild name: ' + child.fname + ' ' + child.lname + '\tDOB: ' + child.DOB
+    }
+
+    confStr += '\n\nWould you like to submit this information?'
+
+    if (confirm(confStr)) {
     // console.log('Component: ' + first, last, address, city, state, zip, county, phone)
     // console.log('Child Array... ' + this.childArray)
-
-    
-    this.register.pass(first, last, address, city, state, zip, county, phone, this.childArray)
+      this.register.pass(first, last, address, city, state, zip, county, phone, this.childArray)
+    }
   }
 
 
