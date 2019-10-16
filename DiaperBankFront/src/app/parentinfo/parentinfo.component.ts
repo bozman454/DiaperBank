@@ -5,7 +5,10 @@ import { RegisterService } from '../register.service'
 import { Injectable } from '@angular/core'
 import { findReadVarNames } from '@angular/compiler/src/output/output_ast';
 import { Child } from '../child';
-
+import { ChildinfoComponent } from '../childinfo/childinfo.component'
+import { ParentInfoClass } from '../parentInfoClass'
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-parentinfo',
@@ -25,10 +28,10 @@ export class ParentinfoComponent implements OnInit {
   childfirst;
   childlast;
   childbirth;
-  jsonObj = {};
+  parentInfoObject;
 
   //public childComp: ChildinfoComponent
-  constructor(public http: HttpClient, public register: RegisterService, ) { 
+  constructor(public http: HttpClient, public register: RegisterService, public pinfo: ParentInfoClass, private router: Router,  private route: ActivatedRoute) {
     this.parentForm = new FormGroup({
       parentFirstName: new FormControl(),
       parentLastName: new FormControl(),
@@ -38,6 +41,19 @@ export class ParentinfoComponent implements OnInit {
       parentZIP: new FormControl(),
       parentCounty: new FormControl(),
       parentPhone: new FormControl()
+    });
+
+    this.parentInfoObject = new ParentInfoClass()
+
+    this.route.queryParams.subscribe(params => {
+      this.parentInfoObject.FirstName = params.first;
+      this.parentInfoObject.LastName = params.last;
+      this.parentInfoObject.Address = params.address;
+      this.parentInfoObject.City = params.city;
+      this.parentInfoObject.State = params.state;
+      this.parentInfoObject.ZipCode = params.zip;
+      this.parentInfoObject.County = params.county;
+      this.parentInfoObject.PhoneNumber = params.phone;
     });
   }
 
@@ -89,7 +105,5 @@ export class ParentinfoComponent implements OnInit {
     })
   }
 
-
-  
 
 }

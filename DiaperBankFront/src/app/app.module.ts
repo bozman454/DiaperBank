@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterService } from './register.service';
 import { LandingComponent } from './landing/landing.component';
 import { ShowpeopleComponent } from './showpeople/showpeople.component';
+import { ParentInfoClass } from './parentInfoClass'
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { ShowpeopleComponent } from './showpeople/showpeople.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [RegisterService],
+  providers: [ParentInfoClass, RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

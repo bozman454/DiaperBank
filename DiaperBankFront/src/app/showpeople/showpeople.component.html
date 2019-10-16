@@ -1,7 +1,7 @@
 <table>
         <thead>
             <tr>
-              <th>id</th>
+              <!-- <th>id</th> -->
               <th>First</th>
               <th>Last</th>
               <th>Address</th>
@@ -10,6 +10,7 @@
               <th>Zip</th>
               <th>County</th>
               <th>Phone</th>
+              <th>Verify</th>
             </tr>
             </thead>
             <tbody>
@@ -22,7 +23,7 @@
               <td>{{ patronList.zip }}</td>
               <td>{{ patronList.county }}</td>
               <td>{{ patronList.phone }}</td>
-              <!-- <td><button type="button" (click)=delete(dataList._id)>Delete</button></td> -->
+              <td><button type="button" (click)='verifyPerson(patronList._id,patronList.first,patronList.last,patronList.address,patronList.city,patronList.state,patronList.zip,patronList.county,patronList.phone)'>Delete</button></td>
             </tr>
             </tbody>
       </table>
