@@ -33,7 +33,7 @@ export class ShowpeopleComponent implements OnInit {
     console.log(this.dataSource);
   }
 
-  displayedColumns : string[] = ['id', 'first', 'last', 'address', 'city', 'state', 'zip', 'county', 'phone'];
+  displayedColumns : string[] = ['first', 'last', 'address', 'city', 'state', 'zip', 'county', 'phone'];
 
   applyFilter(filterValue : string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -43,7 +43,7 @@ export class ShowpeopleComponent implements OnInit {
   showPeople(){
     this.register.getPreRegistered()
     .subscribe(record => {
-      this.dataSource = new MatTableDataSource(record);
+      this.dataSource = new MatTableDataSource(<any> record);
       this.dataSource.sort = this.sort;
       return this.dataSource;
     })
