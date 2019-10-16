@@ -67,4 +67,14 @@ export class RegisterService {
   }  
  
 
+  confirmPerson(id){
+    console.log('Service delete: ' + id)
+    var url = 'http://localhost:3000/deleteperson/' + id
+    console.log('URL: ' + url)
+    return this.http.delete(url)
+    .subscribe(
+
+    )
+  }
+
 }

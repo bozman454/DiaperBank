@@ -110,6 +110,26 @@ app.get('/preregistered', (req, res) => {
 
 
 
+app.delete('/deleteperson/:id', (req, res) => {
+  console.log('Trying to delete...')
+  MongoClient.connect(CONNECTION_URL, { useUnifiedTopology: true, useNewUrlParser: true }, (error, client) => {
+      if (error) throw error;
+
+      database = client.db(DATABASE_NAME);
+      //      once you have this object your off to the races
+      collection = database.collection(COLLECTION_NAME);
+
+      console.log("Connected to " + DATABASE_NAME);
+      
+      var idDelete = {_id : ObjectId(req.params.id)}
+      collection.deleteOne(idDelete)
+          .then(result => console.log(`Deleted ${result.deletedCount} item.`))
+          .catch(err => console.error(`Delete failed with error: ${err}`))
+      res.send({ message: 'success' })
+  })
+});
+
+
 
 app.listen(port, function () {
   console.log('Server started!');
