@@ -54,5 +54,10 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.6.",
+  "main": "express.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
