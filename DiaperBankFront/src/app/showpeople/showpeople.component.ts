@@ -30,18 +30,9 @@ export class ShowpeopleComponent implements OnInit {
 
   patronList;
   clickedPerson;
-
-  
   dataSource;
-
 
   constructor(public register: RegisterService, private router: Router, public parent: ParentinfoComponent) { }
-
-  
-  dataSource;
-
-
-  @ViewChild(MatSort, {static : true}) sort : MatSort;
 
   @ViewChild(MatSort, {static : true}) sort : MatSort;
 
@@ -52,19 +43,17 @@ export class ShowpeopleComponent implements OnInit {
 
   displayedColumns : string[] = ['first', 'last', 'address', 'city', 'state', 'zip', 'county', 'phone'];
 
-  //Calls the service to get the already scanned people and subscribes to the returned record
-  showPeople(){
-    this.register.getPreRegistered()
-      .subscribe(record => {
-        this.patronList = record;
-        // console.log('showPeople(): ' + this.patronList)
-      })
-  }
-
   //When the person is clicked their info is sent to the html so that children can be added
   //Also deletes the person from the DB - not in yet
-  verifyPerson(id, first, last, address, city, state, zip, county, phone) {
-
+  verifyPerson(person) {
+    let first = person.first;
+    let last = person.last;
+    let address = person.address;
+    let city = person.city;
+    let state = person.state;
+    let zip = person.zip;
+    let county = person.county;
+    let phone = person.phone;
     this.router.navigate(['FamilyReg'], { queryParams: { first, last, address, city, state, zip, county, phone }});
 
   }
@@ -82,5 +71,9 @@ export class ShowpeopleComponent implements OnInit {
       this.dataSource.sort = this.sort;
       return this.dataSource;
     })
+  }
+
+  printTest(i) {
+    console.log(i.first);
   }
 }
