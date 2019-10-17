@@ -22,7 +22,7 @@ import { Router } from '@angular/router';
 
 export class ParentinfoComponent implements OnInit {
 
-  private parentForm
+  public parentForm
   childArray: Array<Child> = []
   patronList;
   childfirst;
@@ -87,7 +87,7 @@ export class ParentinfoComponent implements OnInit {
     console.log(this.childArray)
 
     for (var child of this.childArray) {
-      confStr += '\nChild name: ' + child.fname + ' ' + child.lname + '\tDOB: ' + child.DOB
+      confStr += '\nChild name: ' + child.fname + ' ' + child.lname + '\rDOB: ' + child.DOB
     }
 
     confStr += '\n\nWould you like to submit this information?'
@@ -101,7 +101,7 @@ export class ParentinfoComponent implements OnInit {
       this.register.confirmPerson(id)
     }
 
-    this.router.navigate(['show']);
+    this.router.navigate(['Confirm']);
   }
 
   //Calls the service to get the already scanned people and subscribes to the returned record

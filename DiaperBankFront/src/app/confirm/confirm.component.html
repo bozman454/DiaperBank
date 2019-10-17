@@ -1,0 +1,16 @@
+<mat-card style="width: 50%; margin: auto;">
+    <section class="mat-typography">
+        <h3>Confirm Your Information</h3>
+    </section>
+    <mat-divider></mat-divider>
+    <br>
+    <form [formGroup]="confirmForm" class="confirm-form">
+        <mat-form-field style="width: 40%">
+            <input matInput placeholder="First Name" formControlName="confirmFirstName" #first>
+        </mat-form-field>
+
+        <mat-form-field class="spacing" style="width: 40%">
+            <input matInput placeholder="Last Name" formControlName="confirmLastName" #first>
+        </mat-form-field>
+    </form>
+</mat-card>
