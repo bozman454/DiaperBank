@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ParentinfoComponent } from '../parentinfo/parentinfo.component'
 import { Injectable } from '@angular/core'
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { Child } from '../child';
 
 
@@ -20,6 +19,9 @@ export class ChildinfoComponent implements OnInit {
   private childForm
   private children: Array<any> = []
   children2 = []
+  minDate: Date;
+  maxDate = new Date();
+
   
   // public parent: ParentinfoComponent
   constructor(public parent: ParentinfoComponent) {
@@ -35,6 +37,7 @@ export class ChildinfoComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.minDate = this.getMinDate();
   }
 
   getChildren() {
@@ -75,5 +78,13 @@ export class ChildinfoComponent implements OnInit {
         this.children.splice(index, 1)
       }
     }
+  }
+
+  getMinDate() {
+    let minDate = new Date();
+    minDate.setFullYear(minDate.getFullYear() - 3);
+    console.log(this.maxDate);
+    console.log(minDate);
+    return minDate;
   }
 }

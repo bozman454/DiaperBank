@@ -11,11 +11,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 
 
 import { MatMenuModule } from '@angular/material/menu'; 
 import { MatDividerModule } from '@angular/material/divider'; 
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material'; 
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 
@@ -23,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterService } from './register.service';
 import { LandingComponent } from './landing/landing.component';
 import { ShowpeopleComponent } from './showpeople/showpeople.component';
+import { ConfirmComponent } from './confirm/confirm.component';
 import { ParentInfoClass } from './parentInfoClass'
 
 @NgModule({
@@ -32,7 +35,8 @@ import { ParentInfoClass } from './parentInfoClass'
     LoginComponent,
     ChildinfoComponent,
     LandingComponent,
-    ShowpeopleComponent
+    ShowpeopleComponent,
+    ConfirmComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +46,7 @@ import { ParentInfoClass } from './parentInfoClass'
     MatInputModule,
     MatDividerModule,
     MatButtonModule,
+    MatCardModule,
     MatMenuModule,
     ReactiveFormsModule,
     FormsModule,
@@ -49,6 +54,8 @@ import { ParentInfoClass } from './parentInfoClass'
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    MatDatepickerModule,
+    MatNativeDateModule,        
   ],
   providers: [ParentInfoClass, RegisterService],
   bootstrap: [AppComponent]

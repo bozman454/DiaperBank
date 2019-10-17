@@ -32,6 +32,7 @@ export class ShowpeopleComponent implements OnInit {
   patronList;
   clickedPerson;
   dataSource;
+  myDate = new Date();
 
   constructor(public register: RegisterService, private router: Router, public parent: ParentinfoComponent) { }
 
@@ -40,7 +41,6 @@ export class ShowpeopleComponent implements OnInit {
 
   ngOnInit() {
     this.showPeople();
-    console.log(this.dataSource);
   }
 
   displayedColumns : string[] = ['first', 'last', 'address', 'city', 'state', 'zip', 'county', 'phone'];
@@ -68,6 +68,7 @@ export class ShowpeopleComponent implements OnInit {
 
   //Calls the service to get the already scanned people and subscribes to the returned record
   showPeople(){
+    console.log(this.myDate);
     this.register.getPreRegistered()
     .subscribe(record => {
       this.dataSource = new MatTableDataSource(<any> record);
