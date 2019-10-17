@@ -19,7 +19,7 @@ import { Child } from '../child';
 
 export class ParentinfoComponent implements OnInit {
 
-  private parentForm
+  public parentForm
   childArray: Array<Child> = []
   childArray2: Array<any> = []
   patronList;
@@ -69,7 +69,7 @@ export class ParentinfoComponent implements OnInit {
     console.log(this.childArray)
 
     for (var child of this.childArray) {
-      confStr += '\nChild name: ' + child.fname + ' ' + child.lname + '\tDOB: ' + child.DOB
+      confStr += '\nChild name: ' + child.fname + ' ' + child.lname + '\rDOB: ' + child.DOB
     }
 
     confStr += '\n\nWould you like to submit this information?'

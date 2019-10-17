@@ -10,9 +10,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 
-import {MatMenuModule} from '@angular/material/menu'; 
+import { MatMenuModule } from '@angular/material/menu'; 
 import { MatDividerModule } from '@angular/material/divider'; 
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material'; 
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterService } from './register.service';
 import { LandingComponent } from './landing/landing.component';
 import { ShowpeopleComponent } from './showpeople/showpeople.component';
+import { ConfirmComponent } from './confirm/confirm.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { ShowpeopleComponent } from './showpeople/showpeople.component';
     LoginComponent,
     ChildinfoComponent,
     LandingComponent,
-    ShowpeopleComponent
+    ShowpeopleComponent,
+    ConfirmComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,7 @@ import { ShowpeopleComponent } from './showpeople/showpeople.component';
     MatInputModule,
     MatDividerModule,
     MatButtonModule,
+    MatCardModule,
     MatMenuModule,
     ReactiveFormsModule,
     FormsModule,
