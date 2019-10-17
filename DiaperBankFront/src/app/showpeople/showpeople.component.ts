@@ -6,6 +6,7 @@ import { ParentinfoComponent } from '../parentinfo/parentinfo.component'
 import { ParentInfoClass } from '../parentInfoClass';
 
 import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
 export interface Person {
@@ -35,6 +36,7 @@ export class ShowpeopleComponent implements OnInit {
   constructor(public register: RegisterService, private router: Router, public parent: ParentinfoComponent) { }
 
   @ViewChild(MatSort, {static : true}) sort : MatSort;
+  @ViewChild(MatPaginator, {static : true}) paginator : MatPaginator;
 
   ngOnInit() {
     this.showPeople();
@@ -69,6 +71,7 @@ export class ShowpeopleComponent implements OnInit {
     .subscribe(record => {
       this.dataSource = new MatTableDataSource(<any> record);
       this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
       return this.dataSource;
     })
   }

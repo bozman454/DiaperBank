@@ -9,7 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
-import { MatSortModule, MatSort } from '@angular/material/sort';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 import { MatMenuModule } from '@angular/material/menu'; 
@@ -47,7 +48,7 @@ import { ParentInfoClass } from './parentInfoClass'
     HttpClientModule,
     MatTableModule,
     MatSortModule,
-    
+    MatPaginatorModule,
   ],
   providers: [ParentInfoClass, RegisterService],
   bootstrap: [AppComponent]

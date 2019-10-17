@@ -46,14 +46,16 @@ export class ParentinfoComponent implements OnInit {
     this.parentInfoObject = new ParentInfoClass()
 
     this.route.queryParams.subscribe(params => {
-      this.parentInfoObject.FirstName = params.first;
-      this.parentInfoObject.LastName = params.last;
-      this.parentInfoObject.Address = params.address;
-      this.parentInfoObject.City = params.city;
-      this.parentInfoObject.State = params.state;
-      this.parentInfoObject.ZipCode = params.zip;
-      this.parentInfoObject.County = params.county;
-      this.parentInfoObject.PhoneNumber = params.phone;
+      if (params.first != null) {
+        this.parentInfoObject.FirstName = params.first;
+        this.parentInfoObject.LastName = params.last;
+        this.parentInfoObject.Address = params.address;
+        this.parentInfoObject.City = params.city;
+        this.parentInfoObject.State = params.state;
+        this.parentInfoObject.ZipCode = params.zip;
+        this.parentInfoObject.County = params.county;
+        this.parentInfoObject.PhoneNumber = params.phone;
+      }
     });
   }
 
