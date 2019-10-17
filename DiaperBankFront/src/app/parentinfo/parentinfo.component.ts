@@ -46,14 +46,17 @@ export class ParentinfoComponent implements OnInit {
     this.parentInfoObject = new ParentInfoClass()
 
     this.route.queryParams.subscribe(params => {
-      this.parentInfoObject.FirstName = params.first;
-      this.parentInfoObject.LastName = params.last;
-      this.parentInfoObject.Address = params.address;
-      this.parentInfoObject.City = params.city;
-      this.parentInfoObject.State = params.state;
-      this.parentInfoObject.ZipCode = params.zip;
-      this.parentInfoObject.County = params.county;
-      this.parentInfoObject.PhoneNumber = params.phone;
+      if (params.first != null) {
+        this.parentInfoObject.FirstName = params.first;
+        this.parentInfoObject.LastName = params.last;
+        this.parentInfoObject.Address = params.address;
+        this.parentInfoObject.City = params.city;
+        this.parentInfoObject.State = params.state;
+        this.parentInfoObject.ZipCode = params.zip;
+        this.parentInfoObject.County = params.county;
+        this.parentInfoObject.PhoneNumber = params.phone;
+        this.parentInfoObject.id = params.id;
+      }
     });
   }
 
@@ -77,7 +80,7 @@ export class ParentinfoComponent implements OnInit {
     //this.parentForm.get('parentPhone').setValue(str.replace('/^([0-9])/gi', ''))
   }
 
-  submit(first, last, address, city, state, zip, county, phone){
+  submit(first, last, address, city, state, zip, county, phone, id){
     var confStr = 'Name: ' + first + ' ' + last + '\nAddr: ' + address + '\nCity: ' + city +
     '\nState: ' + state + '\nZIP: ' + zip + '\nCounty: ' + county  + '\nPhone: ' + phone
 
@@ -92,8 +95,13 @@ export class ParentinfoComponent implements OnInit {
     if (confirm(confStr)) {
     // console.log('Component: ' + first, last, address, city, state, zip, county, phone)
     // console.log('Child Array... ' + this.childArray)
+    console.log('Passing persons information...')
       this.register.pass(first, last, address, city, state, zip, county, phone, this.childArray)
+      console.log('Confirming person...')
+      this.register.confirmPerson(id)
     }
+
+    this.router.navigate(['show']);
   }
 
   //Calls the service to get the already scanned people and subscribes to the returned record
