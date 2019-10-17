@@ -7,4 +7,5 @@ export class ParentInfoClass {
     ZipCode: string = '';
     County: string = '';
     PhoneNumber: string = '';
+    id: string = '';
 }

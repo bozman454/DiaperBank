@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ɵCompiler_compileModuleSync__POST_R3__ } from '@angular/core';
 import { RegisterService } from '../register.service';
 
 import { Routes, RouterModule, Router } from '@angular/router';
@@ -56,7 +56,8 @@ export class ShowpeopleComponent implements OnInit {
     let zip = person.zip;
     let county = person.county;
     let phone = person.phone;
-    this.router.navigate(['FamilyReg'], { queryParams: { first, last, address, city, state, zip, county, phone }});
+    let id = person._id;
+    this.router.navigate(['FamilyReg'], { queryParams: { first, last, address, city, state, zip, county, phone, id }});
 
   }
 

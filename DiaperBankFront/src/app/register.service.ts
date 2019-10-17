@@ -19,6 +19,7 @@ export class RegisterService {
     var childnum = 1;
     var childComp = 1;
     var childInfo ='';
+
     //Separates out each child individually in the json so that each one is added to a different cell
 
     var idx = 1
@@ -50,14 +51,14 @@ export class RegisterService {
       }
     });*/
 
-    console.log('jsonobj: ' + JSON.stringify(jsonObj))
+    // console.log('jsonobj: ' + JSON.stringify(jsonObj))
 
 
 
     return this.http.post('http://localhost:3000/addpatron', jsonObj)
-    .subscribe(
-
-    )
+      .subscribe((data) => {
+        console.log(data);
+    })
   }
 
 

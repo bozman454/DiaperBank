@@ -57,7 +57,6 @@ app.post('/addpatron', function (req, res) {
   writer.write(req.body)
   writer.end()
 
-
   res.send('Patron added');
 });
 
@@ -111,7 +110,7 @@ app.get('/preregistered', (req, res) => {
 
 
 app.delete('/deleteperson/:id', (req, res) => {
-  console.log('Trying to delete...')
+  console.log('Trying to delete from database...')
   MongoClient.connect(CONNECTION_URL, { useUnifiedTopology: true, useNewUrlParser: true }, (error, client) => {
       if (error) throw error;
 
