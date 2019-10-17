@@ -5,7 +5,10 @@ import { RegisterService } from '../register.service'
 import { Injectable } from '@angular/core'
 import { findReadVarNames } from '@angular/compiler/src/output/output_ast';
 import { Child } from '../child';
-
+import { ChildinfoComponent } from '../childinfo/childinfo.component'
+import { ParentInfoClass } from '../parentInfoClass'
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-parentinfo',
@@ -21,15 +24,14 @@ export class ParentinfoComponent implements OnInit {
 
   public parentForm
   childArray: Array<Child> = []
-  childArray2: Array<any> = []
   patronList;
   childfirst;
   childlast;
   childbirth;
-  jsonObj = {};
+  parentInfoObject;
 
   //public childComp: ChildinfoComponent
-  constructor(public http: HttpClient, public register: RegisterService, ) { 
+  constructor(public http: HttpClient, public register: RegisterService, public pinfo: ParentInfoClass, private router: Router,  private route: ActivatedRoute) {
     this.parentForm = new FormGroup({
       parentFirstName: new FormControl(),
       parentLastName: new FormControl(),
@@ -39,6 +41,22 @@ export class ParentinfoComponent implements OnInit {
       parentZIP: new FormControl(),
       parentCounty: new FormControl(),
       parentPhone: new FormControl()
+    });
+
+    this.parentInfoObject = new ParentInfoClass()
+
+    this.route.queryParams.subscribe(params => {
+      if (params.first != null) {
+        this.parentInfoObject.FirstName = params.first;
+        this.parentInfoObject.LastName = params.last;
+        this.parentInfoObject.Address = params.address;
+        this.parentInfoObject.City = params.city;
+        this.parentInfoObject.State = params.state;
+        this.parentInfoObject.ZipCode = params.zip;
+        this.parentInfoObject.County = params.county;
+        this.parentInfoObject.PhoneNumber = params.phone;
+        this.parentInfoObject.id = params.id;
+      }
     });
   }
 
@@ -62,7 +80,7 @@ export class ParentinfoComponent implements OnInit {
     //this.parentForm.get('parentPhone').setValue(str.replace('/^([0-9])/gi', ''))
   }
 
-  submit(first, last, address, city, state, zip, county, phone){
+  submit(first, last, address, city, state, zip, county, phone, id){
     var confStr = 'Name: ' + first + ' ' + last + '\nAddr: ' + address + '\nCity: ' + city +
     '\nState: ' + state + '\nZIP: ' + zip + '\nCounty: ' + county  + '\nPhone: ' + phone
 
@@ -77,8 +95,13 @@ export class ParentinfoComponent implements OnInit {
     if (confirm(confStr)) {
     // console.log('Component: ' + first, last, address, city, state, zip, county, phone)
     // console.log('Child Array... ' + this.childArray)
-      this.register.pass(first, last, address, city, state, zip, county, phone, this.childArray2)
+    console.log('Passing persons information...')
+      this.register.pass(first, last, address, city, state, zip, county, phone, this.childArray)
+      console.log('Confirming person...')
+      this.register.confirmPerson(id)
     }
+
+    this.router.navigate(['Confirm']);
   }
 
   //Calls the service to get the already scanned people and subscribes to the returned record
@@ -90,7 +113,5 @@ export class ParentinfoComponent implements OnInit {
     })
   }
 
-
-  
 
 }

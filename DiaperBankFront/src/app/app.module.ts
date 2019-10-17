@@ -8,6 +8,9 @@ import { ChildinfoComponent } from './childinfo/childinfo.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 import { MatMenuModule } from '@angular/material/menu'; 
@@ -22,6 +25,7 @@ import { RegisterService } from './register.service';
 import { LandingComponent } from './landing/landing.component';
 import { ShowpeopleComponent } from './showpeople/showpeople.component';
 import { ConfirmComponent } from './confirm/confirm.component';
+import { ParentInfoClass } from './parentInfoClass'
 
 @NgModule({
   declarations: [
@@ -45,9 +49,12 @@ import { ConfirmComponent } from './confirm/confirm.component';
     MatMenuModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
   ],
-  providers: [RegisterService],
+  providers: [ParentInfoClass, RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
