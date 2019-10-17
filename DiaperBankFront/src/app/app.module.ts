@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 
 
 import { MatMenuModule } from '@angular/material/menu'; 
@@ -49,6 +50,8 @@ import { ParentInfoClass } from './parentInfoClass'
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    MatDatepickerModule,
+    MatNativeDateModule,        
   ],
   providers: [ParentInfoClass, RegisterService],
   bootstrap: [AppComponent]

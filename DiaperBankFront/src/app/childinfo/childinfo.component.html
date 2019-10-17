@@ -18,7 +18,9 @@
     <input matInput placeholder="Last Name" formControlName="childLastName" #lname>
 </mat-form-field>
 <mat-form-field class="childInput" style="width: 20%">
-    <input matInput type="date" placeholder="DOB (MM/DD/YYYY)" formControlName="childDOB" #DOB>
+    <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Pick a date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
 <br>
     <button style="background-color: #FF1493; color: white" mat-mini-fab (click)="addChild(fname.value, lname.value, DOB.value)">+</button>
