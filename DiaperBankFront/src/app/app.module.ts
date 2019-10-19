@@ -26,7 +26,8 @@ import { RegisterService } from './register.service';
 import { LandingComponent } from './landing/landing.component';
 import { ShowpeopleComponent } from './showpeople/showpeople.component';
 import { ConfirmComponent } from './confirm/confirm.component';
-import { ParentInfoClass } from './parentInfoClass'
+import { ParentInfoClass } from './parentInfoClass';
+import { AboutComponent } from './about/about.component'
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ParentInfoClass } from './parentInfoClass'
     ChildinfoComponent,
     LandingComponent,
     ShowpeopleComponent,
-    ConfirmComponent
+    ConfirmComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
