@@ -1,7 +1,10 @@
-<button mat-button [matMenuTriggerFor]="menu">Family Registration</button>
+<button mat-button [matMenuTriggerFor]="menu">Menu</button>
 <mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="/">Home</button>
+  
   <button mat-menu-item routerLink="/FamilyReg">Family Registration without scanner</button>
   <button mat-menu-item>Family Registration with scanner</button>
+  <button mat-menu-item routerLink="/about">About</button>
 </mat-menu>
 
 <router-outlet></router-outlet>

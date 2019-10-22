@@ -81,7 +81,7 @@ export class ParentinfoComponent implements OnInit {
   }
 
   submit(first, last, address, city, state, zip, county, phone, id){
-    var confStr = 'Name: ' + first + ' ' + last + '\nAddr: ' + address + '\nCity: ' + city +
+    /*var confStr = 'Name: ' + first + ' ' + last + '\nAddr: ' + address + '\nCity: ' + city +
     '\nState: ' + state + '\nZIP: ' + zip + '\nCounty: ' + county  + '\nPhone: ' + phone
 
     console.log(this.childArray)
@@ -99,7 +99,7 @@ export class ParentinfoComponent implements OnInit {
       this.register.pass(first, last, address, city, state, zip, county, phone, this.childArray)
       console.log('Confirming person...')
       this.register.confirmPerson(id)
-    }
+    }*/
 
     this.router.navigate(['Confirm']);
   }
