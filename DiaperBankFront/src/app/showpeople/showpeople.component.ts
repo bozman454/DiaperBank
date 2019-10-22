@@ -9,17 +9,6 @@ import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
-export interface Person {
-  id: string;
-  first: string;
-  last: string;
-  address: string;
-  city: string;
-  state: string;
-  zip: string;
-  county: string;
-  phone: string;
-}
 
 
 @Component({
@@ -34,7 +23,7 @@ export class ShowpeopleComponent implements OnInit {
   dataSource;
   myDate = new Date();
 
-  constructor(public register: RegisterService, private router: Router, public parent: ParentinfoComponent) { }
+  constructor(public register: RegisterService, private router: Router, public parent: ParentinfoComponent, public parentClass: ParentInfoClass) { }
 
   @ViewChild(MatSort, {static : true}) sort : MatSort;
   @ViewChild(MatPaginator, {static : true}) paginator : MatPaginator;
@@ -43,7 +32,7 @@ export class ShowpeopleComponent implements OnInit {
     this.showPeople();
   }
 
-  displayedColumns : string[] = ['first', 'last', 'address', 'city', 'state', 'zip', 'county', 'phone'];
+  displayedColumns : string[] = ['first', 'last', 'dob', 'address', 'city', 'state', 'zip', 'county', 'phone'];
 
   //When the person is clicked their info is sent to the html so that children can be added
   //Also deletes the person from the DB - not in yet
@@ -57,8 +46,10 @@ export class ShowpeopleComponent implements OnInit {
     let county = person.county;
     let phone = person.phone;
     let id = person._id;
-    this.router.navigate(['FamilyReg'], { queryParams: { first, last, address, city, state, zip, county, phone, id }});
+    let dob = person.dob;
+    this.router.navigate(['FamilyReg'], { queryParams: { first, last, dob, address, city, state, zip, county, phone, id }});
 
+    
   }
 
   

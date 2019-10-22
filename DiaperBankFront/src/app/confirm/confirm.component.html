@@ -6,11 +6,41 @@
     <br>
     <form [formGroup]="confirmForm" class="confirm-form">
         <mat-form-field style="width: 40%">
-            <input matInput placeholder="First Name" formControlName="confirmFirstName" #first>
+            <input matInput placeholder="First Name" formControlName="confirmFirstName" [value]='confirmInfoObject.FirstName' #first>
         </mat-form-field>
 
         <mat-form-field class="spacing" style="width: 40%">
-            <input matInput placeholder="Last Name" formControlName="confirmLastName" #first>
+            <input matInput placeholder="Last Name" formControlName="confirmLastName" [value]='confirmInfoObject.LastName' #last>
         </mat-form-field>
+
+        <mat-form-field style="width: 40%">
+            <input matInput placeholder="Address" formControlName="confirmAddress" [value]='confirmInfoObject.Address' #address>
+        </mat-form-field>
+
+        <mat-form-field class="spacing" style="width: 40%">
+            <input matInput placeholder="City" formControlName="confirmCity" [value]='confirmInfoObject.City' #city>
+        </mat-form-field>
+
+        <mat-form-field style="width: 40%">
+            <input matInput placeholder="State" formControlName="confirmState" [value]='confirmInfoObject.State' #state>
+        </mat-form-field>
+
+        <mat-form-field class="spacing" style="width: 40%">
+            <input matInput placeholder="Zip" formControlName="confirmZip" [value]='confirmInfoObject.ZipCode' #zip>
+        </mat-form-field>
+
+        <mat-form-field style="width: 40%">
+            <input matInput placeholder="County" formControlName="confirmCounty" [value]='confirmInfoObject.County' #county>
+        </mat-form-field>
+
+        <mat-form-field class="spacing" style="width: 40%">
+            <input matInput placeholder="Phone" formControlName="confirmPhone" [value]='confirmInfoObject.PhoneNumber' #phone>
+        </mat-form-field>
+
+        <mat-form-field class="spacing" style="width: 40%">
+            <input matInput placeholder="Children" formControlName="confirmChildren" [value]='confirmInfoObject.childString' #children>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button style="width: 200px; background-color: #A2C93A; color: white" class="right" (click)="submit(first.value, last.value, address.value, city.value, state.value, zip.value, county.value, phone.value, confirmInfoObject.id)">Submit</button>
     </form>
 </mat-card>

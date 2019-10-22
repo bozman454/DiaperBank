@@ -1,65 +1,52 @@
 import { Injectable } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Child } from './child';
+import { ConfirmComponent } from './confirm/confirm.component';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegisterService {
+  constructor(public http: HttpClient, private router: Router) { 
 
-  constructor(public http: HttpClient) { }
-
+  }
 
   //Passes the parent and child information to the express server
-  pass(first, last, address, city, state, zip, county, phone, children: Array<Child>){
-    console.log('Service: ' + {first, last, address, city, state, zip, county, phone})
-    //console.log('Trial: ' + child + ' ' + child.length)
+  pass(first, last, dob, address, city, state, zip, county, phone, childrenArray){
   
-    var jsonObj = {first, last, address, city, state, zip, county, phone} //The parent part of the json
-    var childnum = 1;
-    var childComp = 1;
-    var childInfo ='';
+    var jsonObj = {first, last, dob, address, city, state, zip, county, phone} //The parent part of the json
 
-    //Separates out each child individually in the json so that each one is added to a different cell
 
-    var idx = 1
-    for (var child of children) {
-      jsonObj['child ' + idx++] = child.fname + ' ' + child.lname + ', ' + child.DOB
-    }
+    console.log('prejson: ' + childrenArray)
+    var idx = 0
+    var childNum = 1
+    var numOfChildren = (childrenArray.length/3)
+    var num = 1
+    childrenArray.forEach(element => {
+      // jsonObj['child ' + idx++] = element.fname + ' ' + element.lname + ', ' + element.DOB
+      
+      if((childNum) < numOfChildren){
+        jsonObj['child ' + childNum++] = childrenArray[num-1] + ' ' + childrenArray[num] + ', ' + childrenArray[num+1]
+        idx = idx +3
+        num = num + 3
+      }
+    }); 
+    console.log('postjson: ' + JSON.stringify(jsonObj))
 
-    /*child.forEach(element => {
-      if(childComp == 0){
-        childComp = 1
-      }
-      if(childComp == 3 ){
-        console.log('element 3: ' + element)
-        childInfo = childInfo + element
-        jsonObj['child' + ' ' + childnum] = childInfo
-        childComp = 0
-        childInfo = ''
-        childnum++
-      }
-      if(childComp == 2 ){
-        console.log('element 2: ' + element)
-        childInfo = childInfo + element + ', '
-        childComp++
-      }
-      if(childComp == 1 ){
-        console.log('element 1: ' + element)
-        childInfo = childInfo + element + ' '
-        childComp++
-      }
-    });*/
 
-    // console.log('jsonobj: ' + JSON.stringify(jsonObj))
 
 
 
     return this.http.post('http://localhost:3000/addpatron', jsonObj)
       .subscribe((data) => {
         console.log(data);
-    })
+        // this.router.navigate(['show'])
+    }),(
+      this.router.navigate(['show'])
+    )
   }
+
 
 
   //Calls the express server to return the already scanned patrons

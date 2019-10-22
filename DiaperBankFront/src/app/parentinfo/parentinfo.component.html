@@ -2,43 +2,47 @@
         <h3 style="color:#90726A;">Parent Information</h3>
         <mat-divider></mat-divider>
         <mat-form-field style="width: 48%">
-                <input matInput placeholder="First Name" formControlName="parentFirstName" [value]='parentInfoObject.FirstName' #first>
+                <input matInput placeholder="First Name" formControlName="parentFirstName" [value]='parentInfoObject.FirstName' required #first>
         </mat-form-field>
         <mat-form-field class="childInput" style="width: 48%">
-                <input matInput placeholder="Last Name" formControlName="parentLastName" [value]='parentInfoObject.LastName' #last>
+                <input matInput placeholder="Last Name" formControlName="parentLastName" [value]='parentInfoObject.LastName' required #last>
         </mat-form-field>
         <br>
 
         <mat-form-field style="width: 100%">
-                <input matInput placeholder="Address" formControlName="parentAddress" [value]='parentInfoObject.Address' #address>
+                <input matInput placeholder="Address" formControlName="parentAddress" [value]='parentInfoObject.Address' required #address>
         </mat-form-field>
         <br>
 
         <mat-form-field style="width: 35%">
-                <input matInput placeholder="City" formControlName="parentCity" [value]='parentInfoObject.City' #city>
+                <input matInput placeholder="City" formControlName="parentCity" [value]='parentInfoObject.City' required #city>
         </mat-form-field>
 
         <mat-form-field class="childInput" style="width: 50px">
-                <input matInput placeholder="State" formControlName="parentState" [value]='parentInfoObject.State' #state>
+                <input matInput placeholder="State" formControlName="parentState" [value]='parentInfoObject.State' required #state>
         </mat-form-field>
 
         <mat-form-field class="childInput" style="width: 110px">
-                <input matInput placeholder="ZIP Code" formControlName="parentZIP" [value]='parentInfoObject.ZipCode' #zip>
+                <input matInput placeholder="ZIP Code" formControlName="parentZIP" [value]='parentInfoObject.ZipCode' required #zip>
         </mat-form-field>
 
         <mat-form-field class="childInput" style="width: 35%">
-                <input matInput placeholder="County" formControlName="parentCounty" [value]='parentInfoObject.County' #county>
+                <input matInput placeholder="County" formControlName="parentCounty" [value]='parentInfoObject.County' required #county>
         </mat-form-field>
         <br>
 
-        <mat-form-field style="width: 100%">
+        <mat-form-field style="width: 50%">
+                <input matInput placeholder="DOB" type="date" formControlName="parentDOB"  [value]='parentInfoObject.DOB' required #dob>
+        </mat-form-field>
+
+        <mat-form-field style="width: 50%">
                 <input matInput placeholder="Phone Number" type="tel" (keyup)="phoneFormat($event.target.value, $event.key)"
-                formControlName="parentPhone"  [value]='parentInfoObject.PhoneNumber' #phone>
+                formControlName="parentPhone"  [value]='parentInfoObject.PhoneNumber' required #phone>
                 <!-- formControlName="parentPhone"  #phone [value]="parentForm.get('parentPhone').value"> -->
         </mat-form-field>
 
         <app-childinfo></app-childinfo>
 
-        <button mat-raised-button style="width: 200px; background-color: #A2C93A; color: white" class="right" (click)="submit(first.value, last.value, address.value, city.value, state.value, zip.value, county.value, phone.value, parentInfoObject.id)">Submit</button>
+        <button mat-raised-button style="width: 200px; background-color: #A2C93A; color: white" class="right" (click)="submit(first.value, last.value, dob.value, address.value, city.value, state.value, zip.value, county.value, phone.value, parentInfoObject.id)">Submit</button>
 </div>
 

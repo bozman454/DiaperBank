@@ -1,8 +1,6 @@
-import { ChildInfoClass } from './childInfoClass'
-export class ParentInfoClass {
+export class ConfirmInfoClass {
     FirstName: string = '';
     LastName: string = '';
-    DOB: string = '';
     Address: string = '';
     City: string = '';
     State: string = '';
@@ -10,5 +8,5 @@ export class ParentInfoClass {
     County: string = '';
     PhoneNumber: string = '';
     id: string = '';
-    children: ChildInfoClass[] = [];
+    childString: string = '';
 }

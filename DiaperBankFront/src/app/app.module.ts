@@ -28,6 +28,7 @@ import { ShowpeopleComponent } from './showpeople/showpeople.component';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { ParentInfoClass } from './parentInfoClass';
 import { AboutComponent } from './about/about.component'
+import { ChildInfoClass } from './childInfoClass'
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { AboutComponent } from './about/about.component'
     LandingComponent,
     ShowpeopleComponent,
     ConfirmComponent,
-    AboutComponent
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +60,7 @@ import { AboutComponent } from './about/about.component'
     MatDatepickerModule,
     MatNativeDateModule,        
   ],
-  providers: [ParentInfoClass, RegisterService],
+  providers: [ParentInfoClass, RegisterService, ChildInfoClass],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { ParentinfoComponent } from '../parentinfo/parentinfo.component'
 import { Injectable } from '@angular/core'
 import { Child } from '../child';
+import { ParentInfoClass } from '../parentInfoClass'
 
 
 @Component({
@@ -17,14 +18,13 @@ export class ChildinfoComponent implements OnInit {
 
   
   private childForm
-  private children: Array<any> = []
-  children2 = []
+  private children: Array<Child> = []
   minDate: Date;
   maxDate = new Date();
 
   
   // public parent: ParentinfoComponent
-  constructor(public parent: ParentinfoComponent) {
+  constructor(public parent: ParentinfoComponent, public parentClass: ParentInfoClass) {
     this.childForm = new FormGroup({
       childFirstName: new FormControl(),
       childLastName: new FormControl(),
@@ -44,13 +44,8 @@ export class ChildinfoComponent implements OnInit {
     return this.children
   }
 
-  getChildren2(){
-    // console.log('Get Children2 ... : ' + JSON.stringify(this.children2))
-    return this.children2
-  }
 
   addChild(fname, lname, DOB) {
-
     if (fname && lname && DOB) {
       var child = new Child(fname, lname, DOB)
 
@@ -59,11 +54,6 @@ export class ChildinfoComponent implements OnInit {
       this.childForm.get('childFirstName').setValue('');
       this.childForm.get('childLastName').setValue('');
       this.childForm.get('childDOB').setValue('');
-
-      this.children2.push(JSON.stringify({fname}))
-      this.children2.push(JSON.stringify({lname}))
-      this.children2.push(JSON.stringify({DOB}))
-
 
       this.parent.childArray.push(child)      
     }
