@@ -43,8 +43,8 @@ export class RegisterService {
         console.log(data);
         // this.router.navigate(['show'])
     }),(
-      this.confirmPerson(id)
-    ),(
+    //   this.confirmPerson(id)
+    // ),(
       this.router.navigate(['show'])
     )
   }
