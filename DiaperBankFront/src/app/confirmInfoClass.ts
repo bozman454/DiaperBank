@@ -9,4 +9,5 @@ export class ConfirmInfoClass {
     PhoneNumber: string = '';
     id: string = '';
     childString: string = '';
+    DOB: string = '';
 }

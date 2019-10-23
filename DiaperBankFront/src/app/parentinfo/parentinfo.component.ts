@@ -82,7 +82,7 @@ export class ParentinfoComponent implements OnInit {
     //this.parentForm.get('parentPhone').setValue(str.replace('/^([0-9])/gi', ''))
   }
 
-  submit(first, last, address, city, state, zip, county, phone, id){
+  submit(first, last, address, city, state, zip, county, dob, phone, id){
     var childString = '';
 
     for (var child of this.childArray) {
@@ -91,7 +91,7 @@ export class ParentinfoComponent implements OnInit {
     }
 
     console.log('childstring: ' + childString)
-    this.router.navigate(['Confirm'], { queryParams: { first, last, address, city, state, zip, county, phone, id, childString }});
+    this.router.navigate(['Confirm'], { queryParams: { first, last, address, city, state, zip, county, dob, phone, id, childString }});
   }
 
 

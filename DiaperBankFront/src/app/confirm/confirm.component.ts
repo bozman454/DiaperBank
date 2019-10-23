@@ -30,7 +30,8 @@ export class ConfirmComponent implements OnInit {
       confirmZip: new FormControl(),
       confirmCounty: new FormControl(),
       confirmPhone: new FormControl(),
-      confirmChildren: new FormControl()
+      confirmChildren: new FormControl(),
+      confirmDOB: new FormControl()
     });
 
     this.confirmInfoObject = new ConfirmInfoClass()
@@ -47,6 +48,7 @@ export class ConfirmComponent implements OnInit {
         this.confirmInfoObject.PhoneNumber = params.phone;
         this.confirmInfoObject.id = params.id;
         this.confirmInfoObject.childString = params.childString;
+        this.confirmInfoObject.DOB = params.dob;
       }
     });
     
@@ -56,11 +58,15 @@ export class ConfirmComponent implements OnInit {
   }
 
 
-  submit(first, last, dob, address, city, state, zip, county, phone, id){
+  submit(first, last, address, city, state, zip, county, dob, phone, id){
     console.log('Confirming person...')
     let childrenArray = this.printChildren(this.confirmInfoObject.childString)
     console.log('childrenarray confirm: ' + childrenArray)
-    this.register.pass(first, last, dob, address, city, state, zip, county, phone, childrenArray)
+    this.register.pass(first, last, address, city, state, zip, county, dob,  phone, childrenArray, this.confirmInfoObject.id)
+    // .then(
+    //   this.register.confirmPerson(id)
+      
+    // )
   }
 
   printChildren(s){

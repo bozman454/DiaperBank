@@ -13,11 +13,11 @@ export class RegisterService {
   }
 
   //Passes the parent and child information to the express server
-  pass(first, last, dob, address, city, state, zip, county, phone, childrenArray){
-  
+  pass(first, last, address, city, state, zip, county, dob, phone, childrenArray, id){
+
     var jsonObj = {first, last, dob, address, city, state, zip, county, phone} //The parent part of the json
 
-
+    console.log('id: ' + id)
     console.log('prejson: ' + childrenArray)
     var idx = 0
     var childNum = 1
@@ -43,6 +43,8 @@ export class RegisterService {
         console.log(data);
         // this.router.navigate(['show'])
     }),(
+      this.confirmPerson(id)
+    ),(
       this.router.navigate(['show'])
     )
   }
