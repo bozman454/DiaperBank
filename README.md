@@ -23,7 +23,7 @@ Todo: add information about the APIs ?
 ### Project Leads
 Willem Bossman - Product Owner
 
-Spencer - Scrum Master
+Spencer Tingley - Scrum Master
 
 ### Team Members
 Christina Edmunds - Frontend Developer
