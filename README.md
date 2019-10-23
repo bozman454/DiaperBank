@@ -21,7 +21,7 @@ Todo: add information about the APIs ?
 
 ## Credits
 ### Project Leads
-Willem Bossman - Product Owner
+Willem Bosman - Product Owner
 
 Spencer Tingley - Scrum Master
 
