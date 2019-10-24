@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { ConfirmInfoClass } from '../confirmInfoClass'
 import { RegisterService } from '../register.service'
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-confirm',
@@ -20,7 +21,7 @@ export class ConfirmComponent implements OnInit {
   // childArray;
   
 
-  constructor(private router: Router, private route: ActivatedRoute, public register: RegisterService, public parent: ParentinfoComponent) {
+  constructor(private _snackBar : MatSnackBar, private router: Router, private route: ActivatedRoute, public register: RegisterService, public parent: ParentinfoComponent) {
     this.confirmForm = new FormGroup({
       confirmFirstName: new FormControl(),
       confirmLastName: new FormControl(),
@@ -51,10 +52,15 @@ export class ConfirmComponent implements OnInit {
         this.confirmInfoObject.DOB = params.dob;
       }
     });
-    
   }
 
   ngOnInit() {
+  }
+
+  openSnackBar(message : string, action : string) {
+    this._snackBar.open(message, action, {
+      duration: 3000,
+    });
   }
 
 
