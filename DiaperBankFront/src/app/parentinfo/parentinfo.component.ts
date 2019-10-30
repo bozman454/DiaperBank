@@ -64,7 +64,7 @@ export class ParentinfoComponent implements OnInit {
 
   ngOnInit() {
     this.parentForm.get('parentPhone').setValue('');
-  }
+  } 
 
   phoneFormat(str, key) {
     /*console.log("str: " + str)
