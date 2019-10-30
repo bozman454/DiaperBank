@@ -1,27 +1,27 @@
 
 <mat-card>Fill out the forms below to register information. After filling out child information, click on the green button to add more children. Click submit to advance to the confirmation page </mat-card>
 
-<div [formGroup]="parentForm" class="parentForm" style="width: 800px; align-content: center; display: inline-block; position: absolute; left: 50%; margin-left: -450px">
+<div [formGroup]="parentForm" class="parentForm" style="width: 825px; align-content: center; display: inline-block; position: absolute; left: 50%; margin-left: -450px">
         <h3 style="color:#90726A;">Parent Information</h3>
         <mat-divider></mat-divider>
-        <mat-form-field style="width: 48%">
+        <mat-form-field style="width: 400px">
                 <input matInput placeholder="First Name" formControlName="parentFirstName" [value]='parentInfoObject.FirstName' pattern="\D+" required #first>
         </mat-form-field>
-        <mat-form-field class="childInput" style="width: 48%">
+        <mat-form-field class="childInput" style="width: 400px">
                 <input matInput placeholder="Last Name" formControlName="parentLastName" [value]='parentInfoObject.LastName' pattern="\D+" required #last>
         </mat-form-field>
         <br>
 
-        <mat-form-field style="width: 99.5%">
+        <mat-form-field style="width: 100%">
                 <input matInput placeholder="Address" formControlName="parentAddress" [value]='parentInfoObject.Address' required #address>
         </mat-form-field>
         <br>
 
-        <mat-form-field style="width: 35%">
+        <mat-form-field style="width: 290px">
                 <input matInput placeholder="City" formControlName="parentCity" [value]='parentInfoObject.City' pattern="\D+" required #city>
         </mat-form-field>
 
-        <mat-form-field class="childInput" style="width: 60px">
+        <mat-form-field class="childInput" style="width: 69px">
                 <select matNativeControl placeholder="State" formControlName="parentState" [value]='parentInfoObject.State' required #state>
                         <option value="AL">AL</option>
                         <option value="AK">AK</option>
@@ -81,18 +81,18 @@
                 <input matInput placeholder="ZIP Code" formControlName="parentZIP" [value]='parentInfoObject.ZipCode' pattern = "[0-9]{5}" required #zip>
         </mat-form-field>
 
-        <mat-form-field class="childInput" style="width: 34%">
+        <mat-form-field class="childInput" style="width: 281px">
                 <input matInput placeholder="County" formControlName="parentCounty" [value]='parentInfoObject.County' pattern = "[a-zA-Z]*" required #county>
         </mat-form-field>
         <br>
 
-        <mat-form-field style="width: 20%">
+        <mat-form-field style="width: 400px">
                 <input matInput  [matDatepicker]="picker" placeholder="mm / dd / yyyy" [value]='parentInfoObject.DOB' required #dob>
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
-        <mat-form-field style="width: 100px">
+        <mat-form-field class = "childInput" style="width: 400px">
                 <input matInput placeholder="Phone Number" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                 formControlName="parentPhone"  [value]='parentInfoObject.PhoneNumber' required #phone>
         </mat-form-field>
