@@ -82,4 +82,11 @@ export class ConfirmComponent implements OnInit {
     return temp
   }
 
+  back(first, last, address, city, state, zip, county, dob, phone, id){
+    // let childrenArray = this.printChildren(this.confirmInfoObject.childString)
+    let childrenString = this.confirmInfoObject.childString;
+    this.router.navigate(['FamilyReg'], { queryParams: { first, last, address, city, state, zip, county, dob, phone, id, childrenString }})
+    
+  }
+
 }

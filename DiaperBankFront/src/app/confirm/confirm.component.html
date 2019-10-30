@@ -47,6 +47,7 @@
             <input matInput placeholder="Children" formControlName="confirmChildren" [value]='confirmInfoObject.childString' readonly #children>
         </mat-form-field>
         <br>
+        <button mat-raised-button style="width: 200px; background-color: #A2C93A; color: white" class="right" (click)="back(first.value, last.value, address.value, city.value, state.value, zip.value, county.value, dob.value, phone.value, confirmInfoObject.id)">Back</button>
         <button mat-raised-button style="width: 200px; background-color: #A2C93A; color: white" class="right" (click)="submit(first.value, last.value, address.value, city.value, state.value, zip.value, county.value, dob.value, phone.value, confirmInfoObject.id); openSnackBar('Person Added!', 'Close')">Submit</button>
     </form>
 </mat-card>
