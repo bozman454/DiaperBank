@@ -29,7 +29,8 @@ import { ShowpeopleComponent } from './showpeople/showpeople.component';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { ParentInfoClass } from './parentInfoClass';
 import { AboutComponent } from './about/about.component'
-import { ChildInfoClass } from './childInfoClass'
+import { ChildInfoClass } from './childInfoClass';
+import { HelpComponent } from './help/help.component'
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ChildInfoClass } from './childInfoClass'
     ShowpeopleComponent,
     ConfirmComponent,
     AboutComponent,
+    HelpComponent,
   ],
   imports: [
     BrowserModule,
