@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ParentinfoComponent } from '../parentinfo/parentinfo.component'
 import { Injectable } from '@angular/core'
 import { Child } from '../child';
@@ -26,9 +26,9 @@ export class ChildinfoComponent implements OnInit {
   // public parent: ParentinfoComponent
   constructor(public parent: ParentinfoComponent, public parentClass: ParentInfoClass) {
     this.childForm = new FormGroup({
-      childFirstName: new FormControl(),
-      childLastName: new FormControl(),
-      childDOB: new FormControl()
+      childFirstName: new FormControl('', [Validators.required]),
+      childLastName: new FormControl('', [Validators.required]),
+      childDOB: new FormControl('', [Validators.required])
     });
 
     // this.childForm.get('childFirstName').setValue('Christina');

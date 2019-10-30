@@ -32,10 +32,9 @@ export class RegisterService {
         num = num + 3
       }
     }); 
-    console.log('postjson: ' + JSON.stringify(jsonObj))
 
 
-
+    console.log('JSON: ' + JSON.stringify(jsonObj))
 
 
     return this.http.post('http://localhost:3000/addpatron', jsonObj)

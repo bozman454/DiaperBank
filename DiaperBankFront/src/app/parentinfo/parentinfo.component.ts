@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core'
 import { findReadVarNames } from '@angular/compiler/src/output/output_ast';
@@ -33,15 +33,15 @@ export class ParentinfoComponent implements OnInit {
   // public register: RegisterService,
   constructor(public http: HttpClient,  public pinfo: ParentInfoClass, private router: Router,  private route: ActivatedRoute) {
     this.parentForm = new FormGroup({
-      parentFirstName: new FormControl(),
-      parentLastName: new FormControl(),
-      parentAddress: new FormControl(),
-      parentCity: new FormControl(),
-      parentState: new FormControl(),
-      parentZIP: new FormControl(),
-      parentCounty: new FormControl(),
-      parentPhone: new FormControl(),
-      parentDOB: new FormControl()
+      parentFirstName: new FormControl('', [Validators.required]),
+      parentLastName: new FormControl('', [Validators.required]),
+      parentAddress: new FormControl('', [Validators.required]),
+      parentCity: new FormControl('', [Validators.required]),
+      parentState: new FormControl('', [Validators.required]),
+      parentZIP: new FormControl('', [Validators.required]),
+      parentCounty: new FormControl('', [Validators.required]),
+      parentPhone: new FormControl('', [Validators.required]),
+      parentDOB: new FormControl('', [Validators.required])
     });
 
     this.parentInfoObject = new ParentInfoClass()
