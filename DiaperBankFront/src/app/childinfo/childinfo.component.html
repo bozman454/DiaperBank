@@ -12,13 +12,13 @@
 <br><br>
 
 <mat-form-field style="width: 36.4%">
-    <input matInput placeholder="First Name" formControlName="childFirstName" #fname>
+    <input matInput placeholder="First Name" formControlName="childFirstName" pattern="\D+" #fname>
 </mat-form-field>
 <mat-form-field class="childInput" style="width: 36.4%">
-    <input matInput placeholder="Last Name" formControlName="childLastName" #lname>
+    <input matInput placeholder="Last Name" formControlName="childLastName" pattern="\D+" #lname>
 </mat-form-field>
 <mat-form-field class="childInput" style="width: 20%">
-    <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Pick a date" #DOB>
+    <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="mm / dd / yyyy" readonly #DOB>
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
