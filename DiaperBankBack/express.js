@@ -23,7 +23,7 @@ const csvWriter = createCsvWriter({
     {id: 'State', title: 'State'},
     {id: 'Zip', title: 'Zip'},
     {id: 'County', title: 'County'},
-    {id: 'Phone', title: 'Phone'}      
+    {id: 'Phone', title: 'Phone'}
   ]
 })
 
@@ -37,7 +37,7 @@ port = 3000;
 
 //Adds patrons information to the csv file => patrons.csv
 app.post('/addpatron', function (req, res) {
-  
+
   //If it is the first json sent after the express server is started the headers will be sent
   if(head == false){
     var writer = csvWriter2({sendHeaders: false})
@@ -53,7 +53,7 @@ app.post('/addpatron', function (req, res) {
   console.log('Attempting to post...')
   writer.pipe(fs.createWriteStream('patrons.csv', { flags: 'a' }))
 
-  
+
   writer.write(req.body)
   writer.end()
 
@@ -62,7 +62,11 @@ app.post('/addpatron', function (req, res) {
 
 
 
-
+Dater = () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
 
 const CONNECTION_URL = 'mongodb+srv://Bank:BankInfo_454@persons-1pnrr.mongodb.net/test?retryWrites=true&w=majority';
 
@@ -119,7 +123,7 @@ app.delete('/deleteperson/:id', (req, res) => {
       collection = database.collection(COLLECTION_NAME);
 
       console.log("Connected to " + DATABASE_NAME);
-      
+
       var idDelete = {_id : ObjectId(req.params.id)}
       collection.deleteOne(idDelete)
           .then(result => console.log(`Deleted ${result.deletedCount} item.`))
@@ -131,5 +135,5 @@ app.delete('/deleteperson/:id', (req, res) => {
 
 
 app.listen(port, function () {
-  console.log('Server started!');
+  console.log('Server started!' + Dater());
 });
