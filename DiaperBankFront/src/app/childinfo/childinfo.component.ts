@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ParentinfoComponent } from '../parentinfo/parentinfo.component'
 import { Injectable } from '@angular/core'
 import { Child } from '../child';
