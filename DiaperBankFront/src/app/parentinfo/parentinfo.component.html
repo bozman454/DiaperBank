@@ -31,15 +31,15 @@
         </mat-form-field>
         <br>
 
-        <!-- <mat-form-field style="width: 50%">
+        <mat-form-field style="width: 50%">
                 <input matInput placeholder="DOB" type="date" formControlName="parentDOB"  [value]='parentInfoObject.DOB' required #dob>
-        </mat-form-field> -->
+        </mat-form-field>
 
-        <mat-form-field style="width: 20%">
+        <!-- <mat-form-field style="width: 20%">
                 <input matInput [matDatepicker]="picker" placeholder="Date of Birth" [value]='parentInfoObject.DOB' type=date required #DOB>
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
+        </mat-form-field> -->
 
         <mat-form-field style="width: 30%">
                 <input matInput placeholder="Phone Number" type="tel" (keyup)="phoneFormat($event.target.value, $event.key)"

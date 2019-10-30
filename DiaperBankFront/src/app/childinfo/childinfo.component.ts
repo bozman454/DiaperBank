@@ -26,9 +26,9 @@ export class ChildinfoComponent implements OnInit {
   // public parent: ParentinfoComponent
   constructor(public parent: ParentinfoComponent, public parentClass: ParentInfoClass) {
     this.childForm = new FormGroup({
-      childFirstName: new FormControl('', [Validators.required]),
-      childLastName: new FormControl('', [Validators.required]),
-      childDOB: new FormControl('', [Validators.required])
+      childFirstName: new FormControl(),
+      childLastName: new FormControl(),
+      childDOB: new FormControl()
     });
 
     // this.childForm.get('childFirstName').setValue('Christina');
