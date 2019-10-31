@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ParentinfoComponent } from '../parentinfo/parentinfo.component'
-import { Injectable } from '@angular/core'
+import { Injectable } from '@angular/core';
 import { Child } from '../child';
-import { ParentInfoClass } from '../parentInfoClass'
+import { ParentInfoClass } from '../parentInfoClass';
 
 
 @Component({
@@ -47,7 +47,11 @@ export class ChildinfoComponent implements OnInit {
 
   addChild(fname, lname, DOB) {
     if (fname && lname && DOB) {
-      var child = new Child(fname, lname, DOB)
+      // var child = new Child(fname, lname, DOB)
+      var child = new Child()
+      child.fname = fname;
+      child.lname = lname;
+      child.DOB = DOB;
 
       this.children.push(child)
 

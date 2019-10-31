@@ -8,7 +8,7 @@ import { ParentInfoClass } from '../parentInfoClass';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-
+import { Injectable } from '@angular/core'
 
 
 @Component({
@@ -16,6 +16,10 @@ import { MatTableDataSource } from '@angular/material/table';
   templateUrl: './showpeople.component.html',
   styleUrls: ['./showpeople.component.css']
 })
+@Injectable({
+  providedIn: 'root',
+})
+
 export class ShowpeopleComponent implements OnInit {
 
   patronList;

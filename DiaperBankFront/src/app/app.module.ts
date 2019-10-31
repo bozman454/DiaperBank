@@ -30,7 +30,10 @@ import { ConfirmComponent } from './confirm/confirm.component';
 import { ParentInfoClass } from './parentInfoClass';
 import { AboutComponent } from './about/about.component'
 import { ChildInfoClass } from './childInfoClass';
-import { HelpComponent } from './help/help.component'
+import { HelpComponent } from './help/help.component';
+import { Child } from './child'
+
+
 
 @NgModule({
   declarations: [
@@ -64,7 +67,7 @@ import { HelpComponent } from './help/help.component'
     MatNativeDateModule,
     MatSnackBarModule,        
   ],
-  providers: [ParentInfoClass, RegisterService, ChildInfoClass],
+  providers: [ParentInfoClass, RegisterService, ChildInfoClass, Child],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

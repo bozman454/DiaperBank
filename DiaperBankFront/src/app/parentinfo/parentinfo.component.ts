@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core'
-import { findReadVarNames } from '@angular/compiler/src/output/output_ast';
 import { Child } from '../child';
 import { ChildinfoComponent } from '../childinfo/childinfo.component'
 import { ParentInfoClass } from '../parentInfoClass'
@@ -13,6 +12,9 @@ import { Router } from '@angular/router';
   selector: 'app-parentinfo',
   templateUrl: './parentinfo.component.html',
   styleUrls: ['./parentinfo.component.css']
+})
+@NgModule({
+  providers: [Child]
 })
 
 @Injectable({
@@ -28,10 +30,12 @@ export class ParentinfoComponent implements OnInit {
   childlast;
   childbirth;
   parentInfoObject;
+  listOfChildren;
+  childTest: Child;
 
   //public childComp: ChildinfoComponent
   // public register: RegisterService,
-  constructor(public http: HttpClient,  public pinfo: ParentInfoClass, private router: Router,  private route: ActivatedRoute) {
+  constructor(public http: HttpClient,  public pinfo: ParentInfoClass, private router: Router,  private route: ActivatedRoute, public child: Child) {
     this.parentForm = new FormGroup({
       parentFirstName: new FormControl('', [Validators.required]),
       parentLastName: new FormControl('', [Validators.required]),
@@ -41,7 +45,7 @@ export class ParentinfoComponent implements OnInit {
       parentZIP: new FormControl('', [Validators.required]),
       parentCounty: new FormControl('', [Validators.required]),
       parentPhone: new FormControl('', [Validators.required]),
-      parentDOB: new FormControl('', [Validators.required])
+      parentDOB: new FormControl('', [Validators.required]),
     });
 
     this.parentInfoObject = new ParentInfoClass()
@@ -58,12 +62,18 @@ export class ParentinfoComponent implements OnInit {
         this.parentInfoObject.DOB = params.dob;
         this.parentInfoObject.PhoneNumber = params.phone;
         this.parentInfoObject.id = params.id;
+        if(params.childrenString != null){
+          this.listOfChildren = params.childrenString;
+          console.log('LIST OF CHILDREN: ' + this.listOfChildren)
+          this.backChildren(this.listOfChildren)
+          this.listOfChildren = ''
+        }
       }
-    });
+    });    
   }
 
   ngOnInit() {
-    this.parentForm.get('parentPhone').setValue('');
+    this.parentForm.get('parentPhone').setValue('');   
   } 
 
   phoneFormat(str, key) {
@@ -90,7 +100,7 @@ export class ParentinfoComponent implements OnInit {
         childString += child.fname + ' ' + child.lname + ' ' + child.DOB + ' '
       
       }
-
+      this.childArray = [];
       console.log('childstring: ' + childString)
       this.router.navigate(['Confirm'], { queryParams: { first, last, address, city, state, zip, county, dob, phone, id, childString }});
     } else {
@@ -99,4 +109,42 @@ export class ParentinfoComponent implements OnInit {
   }
 
 
+  backChildren(s){
+    var temp = s.split(" ")
+    console.log('TEMP' + temp)
+
+    var idx = 0
+    var childNum = 1
+    var numOfChildren = (temp.length/3)
+    var num = 1
+    temp.forEach(element => {
+      if((childNum) < numOfChildren){
+        let fname = temp[num-1]
+        let lname = temp[num]
+        let DOB = temp[num+1]
+        if (fname && lname && DOB) {
+          var child = new Child()
+          child.fname = fname;
+          child.lname = lname;
+          child.DOB = DOB;
+          console.log(JSON.stringify(child))
+
+          this.childArray.push(child)
+        }
+        idx = idx +3
+        num = num + 3
+      }      
+    });
+  }
+
+
+  deleteChild = child => {
+    if (confirm("Delete " + child.fname + "?")) {
+      let index = this.childArray.indexOf(child);
+      if (index > -1)
+      {
+        this.childArray.splice(index, 1)
+      }
+    }
+  }
 }

@@ -7,11 +7,17 @@ import { ActivatedRoute } from '@angular/router';
 import { ConfirmInfoClass } from '../confirmInfoClass'
 import { RegisterService } from '../register.service'
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Injectable } from '@angular/core'
+
 
 @Component({
   selector: 'app-confirm',
   templateUrl: './confirm.component.html',
   styleUrls: ['./confirm.component.css']
+})
+
+@Injectable({
+  providedIn: 'root',
 })
 export class ConfirmComponent implements OnInit {
 
@@ -85,8 +91,19 @@ export class ConfirmComponent implements OnInit {
   back(first, last, address, city, state, zip, county, dob, phone, id){
     // let childrenArray = this.printChildren(this.confirmInfoObject.childString)
     let childrenString = this.confirmInfoObject.childString;
+    var createChildPromise = new Promise((res,rej)=>{
+      console.log("SHE KEEPS MOET ET CHANDON IN HER PRETTY CABINET")
+      this.parent.backChildren(childrenString)
+      res(1);
+    })
+    // console.log('CHILDREN STRING: ' + childrenString)
+    // createChildPromise.then(()=>{
+    //   console.log("LET THEM EAT CAKE SHE SAID JSUT LIKE MARIE ANTOINETTE")
+    //   this.router.navigate(['FamilyReg'], { queryParams: { first, last, address, city, state, zip, county, dob, phone, id, childrenString }})
+
+    // }
+    // )
     this.router.navigate(['FamilyReg'], { queryParams: { first, last, address, city, state, zip, county, dob, phone, id, childrenString }})
-    
   }
 
 }
