@@ -93,19 +93,22 @@ export class ParentinfoComponent implements OnInit {
   }
 
   submit(first, last, address, city, state, zip, county, dob, phone, id){
-    if(this.childArray[0] != null) { 
-      var childString = '';
-
-      for (var child of this.childArray) {
-        childString += child.fname + ' ' + child.lname + ' ' + child.DOB + ' '
-      
+    if(first && last  && address && city && state && zip && county && dob && phone){
+      if(this.childArray[0] != null) { 
+        var childString = '';
+  
+        for (var child of this.childArray) {
+          childString += child.fname + ' ' + child.lname + ' ' + child.DOB + ' '
+        
+        }
+  
+        console.log('childstring: ' + childString)
+        this.router.navigate(['Confirm'], { queryParams: { first, last, address, city, state, zip, county, dob, phone, id, childString }});
+      } else {
+        window.alert("You have not added any childeren to this form!");
       }
-      this.childArray = [];
-      console.log('childstring: ' + childString)
-      this.router.navigate(['Confirm'], { queryParams: { first, last, address, city, state, zip, county, dob, phone, id, childString }});
-    } else {
-      window.alert("You have not added any childeren to this form!");
     }
+    
   }
 
 

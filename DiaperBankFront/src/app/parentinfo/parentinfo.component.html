@@ -5,10 +5,10 @@
         <h3 style="color:#90726A;">Parent Information</h3>
         <mat-divider></mat-divider>
         <mat-form-field style="width: 400px">
-                <input matInput placeholder="First Name" formControlName="parentFirstName" [value]='parentInfoObject.FirstName' pattern="\D+" required #first>
+                <input matInput placeholder="First Name" formControlName="parentFirstName" [value]='parentInfoObject.FirstName' required #first>
         </mat-form-field>
         <mat-form-field class="childInput" style="width: 400px">
-                <input matInput placeholder="Last Name" formControlName="parentLastName" [value]='parentInfoObject.LastName' pattern="\D+" required #last>
+                <input matInput placeholder="Last Name" formControlName="parentLastName" [value]='parentInfoObject.LastName' charOnly required #last>
         </mat-form-field>
         <br>
 
@@ -18,7 +18,7 @@
         <br>
 
         <mat-form-field style="width: 290px">
-                <input matInput placeholder="City" formControlName="parentCity" [value]='parentInfoObject.City' pattern="\D+" required #city>
+                <input matInput placeholder="City" formControlName="parentCity" [value]='parentInfoObject.City' charOnly required #city>
         </mat-form-field>
 
         <mat-form-field class="childInput" style="width: 69px">
@@ -82,7 +82,7 @@
         </mat-form-field>
 
         <mat-form-field class="childInput" style="width: 281px">
-                <input matInput placeholder="County" formControlName="parentCounty" [value]='parentInfoObject.County' pattern = "[a-zA-Z]*" required #county>
+                <input matInput placeholder="County" formControlName="parentCounty" [value]='parentInfoObject.County' charOnly required #county>
         </mat-form-field>
         <br>
 
