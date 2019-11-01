@@ -1,4 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+#fc7a7c -- red
+
+
+*/
+
+html { height: 100%; background-color: #c7ef96;}
+body { margin: 0;
+     font-family: "Times New Roman", Times, serif;
+    padding: 25px;
+ }
+
+

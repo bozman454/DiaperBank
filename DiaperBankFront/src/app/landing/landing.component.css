@@ -12,12 +12,13 @@
     padding: 10px;
 }
 
-.menu {
-    text-align: center;
+.menu{
+   text-align: center;
+
 }
 
 button {
     font-size: 150%;
     padding: 5px;
-    width: 50%;
+    
 }

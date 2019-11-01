@@ -1,17 +1,18 @@
-<div class="center" sytle = "background-color: #5f6360">
+<div class="center" sytle="background-color: #5f6360">
     <!-- <div class="title" style = "text-align: center; color: #A2C93A">
     Diaper Bank
     </div> -->
-    <img src = "../../assets/DiaperBankLogo.png" alt = "asdf" style = "display: block;
+    <img src="../../assets/DiaperBankLogo.png" alt="asdf" style="display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
     " class="title">
-    <mat-card>Click on the buttons below to start registration! If you are using the Scannr App for registration make sure you selected the "Scanned Patrons" button </mat-card>
 
-    <div class="menu">
-        <button mat-button routerLink="/FamilyReg">Without Scanner</button><br>
-        <button mat-button routerLink = "/show">Scanned Patrons</button>
-    </div>
-    
+    <mat-card class = "menu">
+        <mat-card-title>Select one of the options below!</mat-card-title>
+        <mat-card-content>if you are not using the Scannr App make sure you select without ID scanner
+        </mat-card-content>
+        <button mat-button routerLink="/FamilyReg">Without ID Scanner</button><br>
+        <button mat-button routerLink="/show">With ID Scanner</button>
+    </mat-card>
 </div>
