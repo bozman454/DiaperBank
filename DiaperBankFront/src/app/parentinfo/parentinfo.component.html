@@ -1,31 +1,41 @@
+<mat-card
+        style="width: 825px; text-align: center; margin: auto;">
+        <mat-card-title>Fill out the forms below to register information. </mat-card-title>
+        <mat-card-content>After filling out child information, click on the green button
+        to add more children. Click submit to advance to the confirmation page</mat-card-content>
+</mat-card>
 
-<mat-card>Fill out the forms below to register information. After filling out child information, click on the green button to add more children. Click submit to advance to the confirmation page </mat-card>
-<mat-card>
-<div [formGroup]="parentForm" class="parentForm" style="width: 825px; align-content: center; display: inline-block; position: absolute; left: 50%; margin-left: -450px">
+<mat-card [formGroup]="parentForm" class="parentForm"
+        style="width: 825px; align-content: center; display: inline-block; position: absolute; left: 50%; margin-left: -450px">
         <h3 style="color:#90726A;">Parent Information</h3>
         <mat-divider></mat-divider>
         <mat-form-field style="width: 400px">
-                <input matInput placeholder="First Name" formControlName="parentFirstName" [value]='parentInfoObject.FirstName' required #first>
+                <input matInput placeholder="First Name" formControlName="parentFirstName"
+                        [value]='parentInfoObject.FirstName' required #first>
         </mat-form-field>
         <mat-form-field class="childInput" style="width: 400px">
-                <input matInput placeholder="Last Name" formControlName="parentLastName" [value]='parentInfoObject.LastName' charOnly required #last>
+                <input matInput placeholder="Last Name" formControlName="parentLastName"
+                        [value]='parentInfoObject.LastName' charOnly required #last>
         </mat-form-field>
         <br>
 
         <mat-form-field style="width: 100%">
-                <input matInput placeholder="Address" formControlName="parentAddress" [value]='parentInfoObject.Address' required #address>
+                <input matInput placeholder="Address" formControlName="parentAddress" [value]='parentInfoObject.Address'
+                        required #address>
         </mat-form-field>
         <br>
 
         <mat-form-field style="width: 290px">
-                <input matInput placeholder="City" formControlName="parentCity" [value]='parentInfoObject.City' charOnly required #city>
+                <input matInput placeholder="City" formControlName="parentCity" [value]='parentInfoObject.City' charOnly
+                        required #city>
         </mat-form-field>
 
         <mat-form-field class="childInput" style="width: 69px">
-                <select matNativeControl placeholder="State" formControlName="parentState" [value]='parentInfoObject.State' required #state>
+                <select matNativeControl placeholder="State" formControlName="parentState"
+                        [value]='parentInfoObject.State' required #state>
                         <option value="AL">AL</option>
                         <option value="AK">AK</option>
-                        <option value="AR">AR</option>	
+                        <option value="AR">AR</option>
                         <option value="AZ">AZ</option>
                         <option value="CA">CA</option>
                         <option value="CO">CO</option>
@@ -35,7 +45,7 @@
                         <option value="FL">FL</option>
                         <option value="GA">GA</option>
                         <option value="HI">HI</option>
-                        <option value="IA">IA</option>	
+                        <option value="IA">IA</option>
                         <option value="ID">ID</option>
                         <option value="IL">IL</option>
                         <option value="IN">IN</option>
@@ -47,14 +57,14 @@
                         <option value="ME">ME</option>
                         <option value="MI">MI</option>
                         <option value="MN">MN</option>
-                        <option value="MO">MO</option>	
+                        <option value="MO">MO</option>
                         <option value="MS">MS</option>
                         <option value="MT">MT</option>
-                        <option value="NC">NC</option>	
+                        <option value="NC">NC</option>
                         <option value="NE">NE</option>
                         <option value="NH">NH</option>
                         <option value="NJ" selected="selected">NJ</option>
-                        <option value="NM">NM</option>			
+                        <option value="NM">NM</option>
                         <option value="NV">NV</option>
                         <option value="NY">NY</option>
                         <option value="ND">ND</option>
@@ -71,42 +81,47 @@
                         <option value="VT">VT</option>
                         <option value="VA">VA</option>
                         <option value="WA">WA</option>
-                        <option value="WI">WI</option>	
+                        <option value="WI">WI</option>
                         <option value="WV">WV</option>
-                        <option value="WY">WY</option>	
+                        <option value="WY">WY</option>
                 </select>
         </mat-form-field>
 
         <mat-form-field class="childInput" style="width: 110px">
-                <input matInput placeholder="ZIP Code" formControlName="parentZIP" [value]='parentInfoObject.ZipCode' pattern = "[0-9]{5}" required #zip>
+                <input matInput placeholder="ZIP Code" formControlName="parentZIP" [value]='parentInfoObject.ZipCode'
+                        pattern="[0-9]{5}" required #zip>
         </mat-form-field>
 
         <mat-form-field class="childInput" style="width: 281px">
-                <input matInput placeholder="County" formControlName="parentCounty" [value]='parentInfoObject.County' charOnly required #county>
+                <input matInput placeholder="County" formControlName="parentCounty" [value]='parentInfoObject.County'
+                        charOnly required #county>
         </mat-form-field>
         <br>
 
         <mat-form-field style="width: 400px">
-                <input matInput  [matDatepicker]="picker" placeholder="mm / dd / yyyy" [value]='parentInfoObject.DOB' required #dob>
+                <input matInput [matDatepicker]="picker" placeholder="mm / dd / yyyy" [value]='parentInfoObject.DOB'
+                        required #dob>
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
-        <mat-form-field class = "childInput" style="width: 400px">
+        <mat-form-field class="childInput" style="width: 400px">
                 <input matInput placeholder="Phone Number" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                formControlName="parentPhone"  [value]='parentInfoObject.PhoneNumber' required #phone>
+                        formControlName="parentPhone" [value]='parentInfoObject.PhoneNumber' required #phone>
         </mat-form-field>
 
         <h3 style="color:#90726A;">Children Information</h3>
 
         <div *ngFor="let child of childArray">
-                <span class="col s11" style="padding-left: 10px; line-height:1.5"> {{ child.fname }} {{ child.lname }} {{ child.DOB}}</span>
+                <span class="col s11" style="padding-left: 10px; line-height:1.5"> {{ child.fname }} {{ child.lname }}
+                        {{ child.DOB}}</span>
                 <span style="float:right; padding-right: 10px;">
-                    <a class="col s1" (click)="deleteChild(child)">&#x2716;</a>
+                        <a class="col s1" (click)="deleteChild(child)">&#x2716;</a>
                 </span>
         </div>
 
         <app-childinfo></app-childinfo>
-
-        <button mat-raised-button style="width: 200px; background-color: #A2C93A; color: white" class="right" id = "submit" (click)="submit(first.value, last.value, address.value, city.value, state.value, zip.value, county.value, dob.value, phone.value, parentInfoObject.id)">Submit</button>
-</div>
+        <button mat-raised-button style="width: 200px; background-color: #A2C93A; color: white" class="right"
+                id="submit"
+                (click)="submit(first.value, last.value, address.value, city.value, state.value, zip.value, county.value, dob.value, phone.value, parentInfoObject.id)">Submit</button>
+</mat-card>
