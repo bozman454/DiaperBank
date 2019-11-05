@@ -7,7 +7,7 @@
 <br>
 <mat-card [formGroup]="parentForm" class="parentForm"
         style="width: 825px; align-content: center; display: inline-block; position: absolute; left: 50%; margin-left: -450px">
-        <h3 style="color:#90726A;">Parent Information</h3>
+        <h3 style="color:#000000;">Parent Information</h3>
         <mat-divider></mat-divider>
         <mat-form-field style="width: 400px">
                 <input matInput placeholder="First Name" formControlName="parentFirstName"
@@ -110,7 +110,7 @@
                         formControlName="parentPhone" [value]='parentInfoObject.PhoneNumber' required #phone>
         </mat-form-field>
 
-        <h3 style="color:#90726A;">Children Information</h3>
+        <h3 style="color:#000000;">Children Information</h3>
 
         <div *ngFor="let child of childArray">
                 <span class="col s11" style="padding-left: 10px; line-height:1.5"> {{ child.fname }} {{ child.lname }}
