@@ -1,8 +1,22 @@
-<mat-card>Below are "cached" scanned patrons. Click on the individual to advance them to the next registration step </mat-card>
+<mat-card style='text-align: center;'>
+<mat-card-title>Scanned Patrons:</mat-card-title>
+<mat-card-content>Below are people who have been scanned previously. clicking on the individuals will advance you to the registration page with their information auto filled! The records are stored in a database and should be cleared when convienent. Click: "delete cache" when you wish to do so. use the 'filter' search bar to find people faster. click 'refresh' when you wish to pull data from the databsae again.</mat-card-content>
+</mat-card>
+
+<br>
+<div style="float:right;">
+<button mat-button color='primary' (click)=showPeople()>Refresh</button>
+
+<button mat-button color='warn' (click)=removePeople()>Delete all cached people</button>
+</div>
 
 <mat-form-field>
   <input matInput (keyup) = "applyFilter($event.target.value)" placeholder = "Filter">
 </mat-form-field>
+
+
+
+
 
 <table mat-table [dataSource] = "dataSource" matSort class = "mat-elevation-z8">
   
@@ -73,6 +87,3 @@
 
 <mat-paginator [pageSizeOptions] = "[10, 20, 50]" showFirstLastButtons></mat-paginator>
 
-<button mat-button color='primary' (click)=showPeople()>Refresh</button>
-
-<button mat-button color='warn' (click)=removePeople()>Delete all cached people</button>

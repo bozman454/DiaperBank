@@ -237,3 +237,190 @@ Result[{"_id":"5dc1c2938a40fcaef43d2196","first":"JOHN","last":"DOE","address":"
 Connected to People
 Displaying everything from Info
 Result[{"_id":"5dc1c2938a40fcaef43d2196","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc1c294d8abcf4646b4109e","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc1c295483db006b563d2d0","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc1c295a85027fc5a631f53","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc1c29696f62cd75432e126","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230}]
+Connected to People
+Displaying everything from Info
+Result[{"_id":"5dc1c2938a40fcaef43d2196","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc1c294d8abcf4646b4109e","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc1c295483db006b563d2d0","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc1c295a85027fc5a631f53","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc1c29696f62cd75432e126","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230}]
+Connected to People
+Displaying everything from Info
+Result[{"_id":"5dc1c2938a40fcaef43d2196","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc1c294d8abcf4646b4109e","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc1c295483db006b563d2d0","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc1c295a85027fc5a631f53","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc1c29696f62cd75432e126","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230}]
+Server started! -  Tue Nov 05 2019 14:37:36 GMT-0500 (Eastern Standard Time) @ 14:37:36
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
