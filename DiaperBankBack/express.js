@@ -16,14 +16,14 @@ const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const csvWriter = createCsvWriter({
   path: 'patrons.csv',
   header: [
-    {id: 'First', title: 'First'},
-    {id: 'Last', title: 'Last'},
-    {id: 'Address', title: 'Address'},
-    {id: 'City', title: 'City'},
-    {id: 'State', title: 'State'},
-    {id: 'Zip', title: 'Zip'},
-    {id: 'County', title: 'County'},
-    {id: 'Phone', title: 'Phone'}
+    { id: 'First', title: 'First' },
+    { id: 'Last', title: 'Last' },
+    { id: 'Address', title: 'Address' },
+    { id: 'City', title: 'City' },
+    { id: 'State', title: 'State' },
+    { id: 'Zip', title: 'Zip' },
+    { id: 'County', title: 'County' },
+    { id: 'Phone', title: 'Phone' }
   ]
 })
 
@@ -39,12 +39,12 @@ port = 3000;
 app.post('/addpatron', function (req, res) {
 
   //If it is the first json sent after the express server is started the headers will be sent
-  if(head == false){
-    var writer = csvWriter2({sendHeaders: false})
+  if (head == false) {
+    var writer = csvWriter2({ sendHeaders: false })
 
   }
-  if(head == true){
-    var writer = csvWriter2({sendHeaders: true})
+  if (head == true) {
+    var writer = csvWriter2({ sendHeaders: true })
 
     head = false
 
@@ -63,9 +63,9 @@ app.post('/addpatron', function (req, res) {
 
 
 Dater = () => {
-    var today = new Date();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    return ` -  ${today} @ ${time}`
+  var today = new Date();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  return ` -  ${today} @ ${time}`
 }
 
 const CONNECTION_URL = 'mongodb+srv://Bank:BankInfo_454@persons-1pnrr.mongodb.net/test?retryWrites=true&w=majority';
@@ -77,8 +77,8 @@ const COLLECTION_NAME = "Info";
 
 
 var corsOptions = {
-    origin: 'http://localhost:3000',
-    optionsCuccessStatus: 200
+  origin: 'http://localhost:3000',
+  optionsCuccessStatus: 200
 }
 
 patrons = [];
@@ -88,30 +88,30 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/preregistered', (req, res) => {
-    //                                          These two parameters supress warnings
-    MongoClient.connect(CONNECTION_URL, { useUnifiedTopology: true, useNewUrlParser: true }, (error, client) => {
-        if (error) throw error;
+  //                                          These two parameters supress warnings
+  MongoClient.connect(CONNECTION_URL, { useUnifiedTopology: true, useNewUrlParser: true }, (error, client) => {
+    if (error) throw error;
 
-        database = client.db(DATABASE_NAME);
-        //      once you have this object your off to the races
-        collection = database.collection(COLLECTION_NAME);
+    database = client.db(DATABASE_NAME);
+    //      once you have this object your off to the races
+    collection = database.collection(COLLECTION_NAME);
 
-        console.log("Connected to " + DATABASE_NAME);
-        //      do your queries on the "collection" object
-        collection.find({}).toArray((err, result) => {
-            if (err) throw err;
-            console.log(`Displaying everything from ${COLLECTION_NAME}`);
+    console.log("Connected to " + DATABASE_NAME);
+    //      do your queries on the "collection" object
+    collection.find({}).toArray((err, result) => {
+      if (err) throw err;
+      console.log(`Displaying everything from ${COLLECTION_NAME}`);
 
-            if (result) {
-                console.log('Result' + JSON.stringify(result))
-                return res.status(200).send(result);
-            }
-            //client.close();
-        })
+      if (result) {
+        console.log('Result' + JSON.stringify(result))
+        return res.status(200).send(result);
+      }
+      //client.close();
     })
+  })
 });
 
-app.get('/deletedata',(req,res)=>{
+app.get('/deletedata', (req, res) => {
   MongoClient.connect(CONNECTION_URL, { useUnifiedTopology: true, useNewUrlParser: true }, (error, client) => {
     if (error) throw error;
 
@@ -121,30 +121,30 @@ app.get('/deletedata',(req,res)=>{
 
     console.log("Connected to " + DATABASE_NAME);
 
-    
+
     collection.remove({})
-        .then(result => console.log(`Deleted everything `))
-        .catch(err => console.error(`Delete failed with error: ${err}`))
+      .then(result => console.log(`Deleted everything `))
+      .catch(err => console.error(`Delete failed with error: ${err}`))
     res.send({ message: 'success' })
-})
+  })
 })
 
 app.delete('/deleteperson/:id', (req, res) => {
   console.log('Trying to delete from database...')
   MongoClient.connect(CONNECTION_URL, { useUnifiedTopology: true, useNewUrlParser: true }, (error, client) => {
-      if (error) throw error;
+    if (error) throw error;
 
-      database = client.db(DATABASE_NAME);
-      //      once you have this object your off to the races
-      collection = database.collection(COLLECTION_NAME);
+    database = client.db(DATABASE_NAME);
+    //      once you have this object your off to the races
+    collection = database.collection(COLLECTION_NAME);
 
-      console.log("Connected to " + DATABASE_NAME);
+    console.log("Connected to " + DATABASE_NAME);
 
-      var idDelete = {_id : ObjectId(req.params.id)}
-      collection.deleteOne(idDelete)
-          .then(result => console.log(`Deleted ${result.deletedCount} item.`))
-          .catch(err => console.error(`Delete failed with error: ${err}`))
-      res.send({ message: 'success' })
+    var idDelete = { _id: ObjectId(req.params.id) }
+    collection.deleteOne(idDelete)
+      .then(result => console.log(`Deleted ${result.deletedCount} item.`))
+      .catch(err => console.error(`Delete failed with error: ${err}`))
+    res.send({ message: 'success' })
   })
 });
 

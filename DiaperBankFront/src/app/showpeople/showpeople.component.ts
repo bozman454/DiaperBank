@@ -57,7 +57,8 @@ export class ShowpeopleComponent implements OnInit {
   }
 
   removePeople(){
-    this.register.removeEveryone().subscribe(record => console.log(record));
+    this.register.removeEveryone().subscribe(record => {console.log(record); this.showPeople()});
+
   }
   applyFilter(filterValue : string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();

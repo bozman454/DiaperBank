@@ -157,3 +157,43 @@ Result[]
 Connected to People
 Displaying everything from Info
 Result[]
+Connected to People
+Displaying everything from Info
+Result[]
+Connected to People
+Displaying everything from Info
+Result[]
+Connected to People
+Displaying everything from Info
+Result[]
+Connected to People
+Displaying everything from Info
+Result[]
+Connected to People
+Deleted everything 
+Connected to People
+Deleted everything 
+Connected to People
+Deleted everything 
+Connected to People
+Deleted everything 
+Connected to People
+Displaying everything from Info
+Result[]
+Connected to People
+Displaying everything from Info
+Result[{"_id":"5dc18de196f62cd7540504e5","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc18de296f62cd75405053b","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc18de2fdcf378c3cba2b70","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc18de3fdcf378c3cba2be1","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc18de496f62cd7540506d3","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230}]
+Connected to People
+Displaying everything from Info
+Result[{"_id":"5dc18de196f62cd7540504e5","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc18de296f62cd75405053b","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc18de2fdcf378c3cba2b70","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc18de3fdcf378c3cba2be1","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc18de496f62cd7540506d3","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230}]
+Connected to People
+Displaying everything from Info
+Result[{"_id":"5dc18de196f62cd7540504e5","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc18de296f62cd75405053b","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc18de2fdcf378c3cba2b70","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc18de3fdcf378c3cba2be1","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230},{"_id":"5dc18de496f62cd7540506d3","first":"JOHN","last":"DOE","address":"1234 Address","city":"CITY NAME","state":"AA","zip":"12345-1234","DOB":"01012000","county":"USA","timestamp":1421336230}]
+Connected to People
+Deleted everything 
+Connected to People
+Displaying everything from Info
+Result[]
+Connected to People
+Displaying everything from Info
+Result[]
