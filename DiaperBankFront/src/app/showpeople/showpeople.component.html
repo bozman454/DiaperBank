@@ -73,6 +73,6 @@
 
 <mat-paginator [pageSizeOptions] = "[10, 20, 50]" showFirstLastButtons></mat-paginator>
 
-<button type='button' (click)=showPeople()>Refresh</button>
+<button mat-button color='primary' (click)=showPeople()>Refresh</button>
 
-<button type='button' (click)=removePeople()>Delete all cached people</button>
+<button mat-button color='warn' (click)=removePeople()>Delete all cached people</button>

@@ -9,6 +9,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Injectable } from '@angular/core'
+import { IfStmt } from '@angular/compiler';
 
 
 @Component({
@@ -57,7 +58,10 @@ export class ShowpeopleComponent implements OnInit {
   }
 
   removePeople(){
-    this.register.removeEveryone().subscribe(record => {console.log(record); this.showPeople()});
+    if(confirm("Delete all cached scans? All people who were scanned previously will be removed for the database. Continue?")){
+      this.register.removeEveryone().subscribe(record => {console.log(record); this.showPeople()});
+    }
+    
 
   }
   applyFilter(filterValue : string) {
