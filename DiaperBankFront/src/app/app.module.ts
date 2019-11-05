@@ -31,8 +31,7 @@ import { ParentInfoClass } from './parentInfoClass';
 import { AboutComponent } from './about/about.component'
 import { ChildInfoClass } from './childInfoClass';
 import { HelpComponent } from './help/help.component';
-import { Child } from './child'
-
+import { Child } from './child';  
 
 
 import { OnlycharDirective } from './directives/charOnlyDirective';
@@ -68,9 +67,9 @@ import { OnlycharDirective } from './directives/charOnlyDirective';
     MatPaginatorModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSnackBarModule,        
+    MatSnackBarModule,       
   ],
-  providers: [ParentInfoClass, RegisterService, ChildInfoClass, Child],
-  bootstrap: [AppComponent]
+  providers: [ParentInfoClass, RegisterService, ChildInfoClass, Child, ],
+  bootstrap: [AppComponent,]
 })
 export class AppModule { }

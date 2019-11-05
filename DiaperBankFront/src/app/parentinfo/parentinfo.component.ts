@@ -35,7 +35,7 @@ export class ParentinfoComponent implements OnInit {
 
   //public childComp: ChildinfoComponent
   // public register: RegisterService,
-  constructor(public http: HttpClient,  public pinfo: ParentInfoClass, private router: Router,  private route: ActivatedRoute, public child: Child) {
+  constructor(public http: HttpClient,  public pinfo: ParentInfoClass, private router: Router,  private route: ActivatedRoute, public child: Child, ) {
     this.parentForm = new FormGroup({
       parentFirstName: new FormControl('', [Validators.required]),
       parentLastName: new FormControl('', [Validators.required]),
