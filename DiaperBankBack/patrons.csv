@@ -23,3 +23,5 @@ Nate,Schmit,123 Main St.,Cincinnati,OH,12345,Milford,123-456-7890,"asdf asdfa, 2
 Nate,Schmit,123 Main St.,Cincinnati,OH,12345,Milford,123-456-7890,"adsf adsfas, 2019-10-07"
 first,last,address,city,state,zip,county,phone,child 1
 Nate,Schmit,123 Main St.,Cincinnati,OH,12345,Milford,123-456-7890,"asd asd, 2012-12-12"
+first,last,dob,address,city,state,zip,county,phone,child 1
+JOHN,DOE,11/14/2019,1234 Address,CITY NAME,CA,12345-1234,USA,undefined,"aefdas asdfas, 11/3/2019"

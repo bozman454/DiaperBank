@@ -54,7 +54,9 @@ export class RegisterService {
   getPreRegistered(){
     return this.http.get('http://localhost:3000/preregistered')
   }  
- 
+  removeEveryone(){
+    return this.http.get('http://localhost:3000/deletedata')
+  }
 
   confirmPerson(id){
     console.log('Service delete: ' + id)
