@@ -32,21 +32,11 @@ export class ParentinfoComponent implements OnInit {
   parentInfoObject;
   listOfChildren;
   childTest: Child;
-
+  states = [ 'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY' ];
   //public childComp: ChildinfoComponent
   // public register: RegisterService,
   constructor(public http: HttpClient,  public pinfo: ParentInfoClass, private router: Router,  private route: ActivatedRoute, public child: Child, ) {
-    this.parentForm = new FormGroup({
-      parentFirstName: new FormControl('', [Validators.required]),
-      parentLastName: new FormControl('', [Validators.required]),
-      parentAddress: new FormControl('', [Validators.required]),
-      parentCity: new FormControl('', [Validators.required]),
-      parentState: new FormControl('', [Validators.required]),
-      parentZIP: new FormControl('', [Validators.required]),
-      parentCounty: new FormControl('', [Validators.required]),
-      parentPhone: new FormControl('', [Validators.required]),
-      parentDOB: new FormControl('', [Validators.required]),
-    });
+    
 
     this.parentInfoObject = new ParentInfoClass()
 
@@ -69,7 +59,18 @@ export class ParentinfoComponent implements OnInit {
           this.listOfChildren = ''
         }
       }
-    });    
+    });
+    this.parentForm = new FormGroup({
+      parentFirstName: new FormControl('', [Validators.required]),
+      parentLastName: new FormControl('', [Validators.required]),
+      parentAddress: new FormControl('', [Validators.required]),
+      parentCity: new FormControl('', [Validators.required]),
+      parentState: new FormControl(this.parentInfoObject.State, [Validators.required]),
+      parentZIP: new FormControl('', [Validators.required]),
+      parentCounty: new FormControl('', [Validators.required]),
+      parentPhone: new FormControl('', [Validators.required]),
+      parentDOB: new FormControl('', [Validators.required]),
+    });  
   }
 
   ngOnInit() {
