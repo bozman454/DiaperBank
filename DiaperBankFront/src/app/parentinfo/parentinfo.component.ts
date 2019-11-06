@@ -41,7 +41,7 @@ export class ParentinfoComponent implements OnInit {
     this.parentInfoObject = new ParentInfoClass()
 
     this.route.queryParams.subscribe(params => {
-      if (params.first != null) {
+      // if (params.first != null) {
         this.parentInfoObject.FirstName = params.first;
         this.parentInfoObject.LastName = params.last;
         this.parentInfoObject.Address = params.address;
@@ -58,7 +58,6 @@ export class ParentinfoComponent implements OnInit {
           this.backChildren(this.listOfChildren)
           this.listOfChildren = ''
         }
-      }
     });
     this.parentForm = new FormGroup({
       parentFirstName: new FormControl('', [Validators.required]),
