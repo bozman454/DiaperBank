@@ -53,36 +53,36 @@ export class ShowpeopleComponent implements OnInit {
     let id = person._id;
     let dob = person.dob;
 
-    if(first == null){
-      first = ''
-    }
-    if(last == null){
-      last = ''
-    }
-    if(address == null){
-      address = ''
-    }
-    if(city == null){
-      city = ''
-    }
-    if(state === null){
-      state = ''
-    }
-    if(zip == null){
-      zip = ''
-    }
-    if(county == null){
-      county = ''
-    }
-    if(phone == null){
-      phone = ''
-    }
-    if(id == null){
-      id = ''
-    }
-    if(dob == null){
-      dob = ''
-    }
+    // if(first == null){
+    //   first = ''
+    // }
+    // if(last == null){
+    //   last = ''
+    // }
+    // if(address == null){
+    //   address = ''
+    // }
+    // if(city == null){
+    //   city = ''
+    // }
+    // if(state === null){
+    //   state = ''
+    // }
+    // if(zip == null){
+    //   zip = ''
+    // }
+    // if(county == null){
+    //   county = ''
+    // }
+    // if(phone == null){
+    //   phone = ''
+    // }
+    // if(id == null){
+    //   id = ''
+    // }
+    // if(dob == null){
+    //   dob = ''
+    // }
     this.router.navigate(['FamilyReg'], { queryParams: { first, last, dob, address, city, state, zip, county, phone, id }});
 
     
