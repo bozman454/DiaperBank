@@ -35,6 +35,7 @@ import { Child } from './child';
 
 
 import { OnlycharDirective } from './directives/charOnlyDirective';
+import { OnlynumDirective } from './directives/numOnlyDirective';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { OnlycharDirective } from './directives/charOnlyDirective';
     AboutComponent,
     HelpComponent,
     OnlycharDirective,
+    OnlynumDirective,
   ],
   imports: [
     BrowserModule,
