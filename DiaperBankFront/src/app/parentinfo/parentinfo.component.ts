@@ -67,9 +67,12 @@ export class ParentinfoComponent implements OnInit {
           this.parentInfoObject.ZipCode = ''
         }
         if(this.parentInfoObject.ZipCode != ''){
+          if(this.parentInfoObject.ZipCode.length > 5){
+            this.parentInfoObject.ZipCode = this.parentInfoObject.ZipCode.substring(0,5)
+          }
           this.findCounty(this.parentInfoObject.ZipCode)
         }
-        this.parentInfoObject.County = params.county;
+        // this.parentInfoObject.County = params.county;
         if(this.parentInfoObject.County == null){
           this.parentInfoObject.County = ''
         }

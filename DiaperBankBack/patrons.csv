@@ -27,3 +27,5 @@ first,last,dob,address,city,state,zip,county,phone,child 1
 JOHN,DOE,11/14/2019,1234 Address,CITY NAME,CA,12345-1234,USA,undefined,"aefdas asdfas, 11/3/2019"
 first,last,dob,address,city,state,zip,county,phone,child 1
 asdfs,asfasd,11/1/2019,sdfasd,sdafsd,AZ,54545,asdafdsd,505060515,"aasdf sdafsd, 11/5/2019"
+first,last,dob,address,city,state,zip,county,phone,child 1,child 2,child 3
+Joe,Smith,11/1/2019,1234 Main St.,Cincinnati,OH,45242,Hamilton,1234567890,"CHILD child, 11/5/2019","asdfa afsda, 11/5/2019","werqweasd asdf, 11/5/2019"
