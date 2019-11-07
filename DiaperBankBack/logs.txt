@@ -424,3 +424,232 @@ Displaying everything from Info () => {
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     return ` -  ${today} @ ${time}`
 }
+Server started! -  Wed Nov 06 2019 08:32:34 GMT-0500 (Eastern Standard Time) @ 8:32:34
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Server started! -  Wed Nov 06 2019 10:07:50 GMT-0500 (Eastern Standard Time) @ 10:7:50
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Server started! -  Wed Nov 06 2019 10:28:22 GMT-0500 (Eastern Standard Time) @ 10:28:22
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Server started! -  Wed Nov 06 2019 10:35:07 GMT-0500 (Eastern Standard Time) @ 10:35:7
+Server started! -  Wed Nov 06 2019 11:00:03 GMT-0500 (Eastern Standard Time) @ 11:0:3
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return ` -  ${today} @ ${time}`
+}
+Server started! -  Wed Nov 06 2019 11:08:46 GMT-0500 (Eastern Standard Time) @ 11:8:46
+Server started! -  Wed Nov 06 2019 11:15:19 GMT-0500 (Eastern Standard Time) @ 11:15:19
+Server started! -  Wed Nov 06 2019 11:16:36 GMT-0500 (Eastern Standard Time) @ 11:16:36
+Server started! -  Wed Nov 06 2019 11:17:07 GMT-0500 (Eastern Standard Time) @ 11:17:7

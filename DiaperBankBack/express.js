@@ -62,6 +62,49 @@ app.post('/addpatron', function (req, res) {
 });
 
 
+var csv = require('csv-stream');
+var request = require('request');
+
+app.get('/getcounty/:zip', function(req, res){
+  var county = '';
+  const csv = require('csv-parser');
+  const fs = require('fs');
+  console.log('Getting county...')
+  fs.createReadStream('uscities.csv')
+    .pipe(csv())
+    .on('data', (row) => {
+      if (row.zips.includes(req.params.zip)) {
+        console.log(row)
+        console.log(row.county_name)
+        if (county == '') {
+          county = row.county_name;
+        }
+      }
+    })
+    .on('end', () => {
+      console.log('CSV file successfully processed');
+      // console.log('Express County: ' + county)
+      res.status(200).send({county})
+    });
+
+
+})
+
+
+
+
+// app.get('/getcounty/:zip', function(req, res){
+//   const YOUR_API_KEY = '';
+//   var zipApi = 'https://maps.googleapis.com/maps/api/geocode/json?postal_code=' + req.params.zip + '&key='+YOUR_API_KEY
+//   app.get(zipApi, function(req,res){
+
+//   })
+  
+  
+// })
+
+
+
 
 Dater = () => {
     var today = new Date();
