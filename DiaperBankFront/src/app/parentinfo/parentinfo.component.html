@@ -24,7 +24,7 @@
                         required maxlength="50" #address>
                 <mat-hint>Example: 1234 Main St.</mat-hint>
         </mat-form-field>
-        <br>
+        <br><br>
 
         <mat-form-field style="width: 290px">
                 <input matInput placeholder="City" formControlName="parentCity" [value]='parentInfoObject.City' charOnly
@@ -109,7 +109,7 @@
         <mat-form-field class="childInput" style="width: 400px">
                 <input matInput placeholder="Phone Number" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                         formControlName="parentPhone" [value]='parentInfoObject.PhoneNumber' required numOnly #phone>
-                <mat-hint>Example: 123-456-7890</mat-hint>
+                <mat-hint>Example: 1234567890</mat-hint>
         </mat-form-field>
 
         <h3 style="color:#000000;">Children Information</h3>
