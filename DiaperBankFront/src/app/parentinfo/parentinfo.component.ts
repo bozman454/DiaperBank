@@ -66,6 +66,9 @@ export class ParentinfoComponent implements OnInit {
         if(this.parentInfoObject.ZipCode == null){
           this.parentInfoObject.ZipCode = ''
         }
+        if(this.parentInfoObject.ZipCode != ''){
+          this.findCounty(this.parentInfoObject.ZipCode)
+        }
         this.parentInfoObject.County = params.county;
         if(this.parentInfoObject.County == null){
           this.parentInfoObject.County = ''
@@ -175,6 +178,22 @@ export class ParentinfoComponent implements OnInit {
       {
         this.childArray.splice(index, 1)
       }
+    }
+  }
+
+  findCounty(zip){
+    if (zip.length == 5) {
+      var url = 'http://localhost:3000/getcounty/' + zip
+      // console.log('URL: ' + url)
+      this.http.get(url)
+        .subscribe((data) => {
+          var countyString = JSON.stringify(data)
+          var countyStringLength = (countyString.length - 2)
+          this.parentInfoObject.County = (countyString.substring(11, countyStringLength))
+        })
+    }
+    else{
+      this.parentInfoObject.County = ''
     }
   }
 }

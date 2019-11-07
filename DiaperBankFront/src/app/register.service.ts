@@ -39,7 +39,7 @@ export class RegisterService {
 
     return this.http.post('http://localhost:3000/addpatron', jsonObj)
       .subscribe((data) => {
-        console.log(data);
+        console.log("newly added patron" + data);
         // this.router.navigate(['show'])
     }),(
     //   this.confirmPerson(id)
