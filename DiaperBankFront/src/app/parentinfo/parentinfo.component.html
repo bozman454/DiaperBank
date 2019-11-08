@@ -100,8 +100,9 @@
         <br>
 
         <mat-form-field style="width: 400px">
-                <input matInput [matDatepicker]="picker" placeholder="mm / dd / yyyy" [value]='parentInfoObject.DOB'
+                <input matInput [matDatepicker]="picker" placeholder="Birth Date" [value]='parentInfoObject.DOB'
                         required readonly #dob>
+                <mat-hint>mm / dd / yyyy</mat-hint>
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
