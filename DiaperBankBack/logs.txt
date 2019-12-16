@@ -653,3 +653,145 @@ Server started! -  Wed Nov 06 2019 11:08:46 GMT-0500 (Eastern Standard Time) @ 1
 Server started! -  Wed Nov 06 2019 11:15:19 GMT-0500 (Eastern Standard Time) @ 11:15:19
 Server started! -  Wed Nov 06 2019 11:16:36 GMT-0500 (Eastern Standard Time) @ 11:16:36
 Server started! -  Wed Nov 06 2019 11:17:07 GMT-0500 (Eastern Standard Time) @ 11:17:7
+Server started! -  Tue Dec 10 2019 15:57:50 GMT-0500 (Eastern Standard Time) @ 15:57:50
+Server started! -  Wed Dec 11 2019 15:57:28 GMT-0500 (Eastern Standard Time) @ 15:57:28
+Server started! -  Wed Dec 11 2019 16:09:06 GMT-0500 (Eastern Standard Time) @ 16:9:6
+Server started! -  Wed Dec 11 2019 20:09:16 GMT-0500 (Eastern Standard Time) @ 20:9:16
+Server started! -  Wed Dec 11 2019 20:35:30 GMT-0500 (Eastern Standard Time) @ 20:35:30
+Connected to People () => {
+  var today = new Date();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+  var today = new Date();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  return ` -  ${today} @ ${time}`
+}
+Getting county...
+Getting county...
+{ city: 'North Mankato',
+  state_id: 'MN',
+  state_name: 'Minnesota',
+  county_name: 'Nicollet',
+  zips: '56003',
+  id: '1840042780' }
+Nicollet
+{ city: 'North Mankato',
+  state_id: 'MN',
+  state_name: 'Minnesota',
+  county_name: 'Nicollet',
+  zips: '56003',
+  id: '1840042780' }
+Nicollet
+CSV file successfully processed
+CSV file successfully processed
+Connected to People () => {
+  var today = new Date();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+  var today = new Date();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  return ` -  ${today} @ ${time}`
+}
+Getting county...
+Getting county...
+{ city: 'Schenectady',
+  state_id: 'NY',
+  state_name: 'New York',
+  county_name: 'Schenectady',
+  zips: '12305 12304 12307 12308 12301 12325 12345',
+  id: '1840058112' }
+Schenectady
+{ city: 'Schenectady',
+  state_id: 'NY',
+  state_name: 'New York',
+  county_name: 'Schenectady',
+  zips: '12305 12304 12307 12308 12301 12325 12345',
+  id: '1840058112' }
+Schenectady
+CSV file successfully processed
+CSV file successfully processed
+Connected to People () => {
+  var today = new Date();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+  var today = new Date();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+  var today = new Date();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+  var today = new Date();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+  var today = new Date();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+  var today = new Date();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  return ` -  ${today} @ ${time}`
+}
+Getting county...
+Getting county...
+{ city: 'Schenectady',
+  state_id: 'NY',
+  state_name: 'New York',
+  county_name: 'Schenectady',
+  zips: '12305 12304 12307 12308 12301 12325 12345',
+  id: '1840058112' }
+Schenectady
+{ city: 'Schenectady',
+  state_id: 'NY',
+  state_name: 'New York',
+  county_name: 'Schenectady',
+  zips: '12305 12304 12307 12308 12301 12325 12345',
+  id: '1840058112' }
+Schenectady
+CSV file successfully processed
+CSV file successfully processed
+Connected to People () => {
+  var today = new Date();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+  var today = new Date();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  return ` -  ${today} @ ${time}`
+}
+Connected to People
+Deleted everything 
+Connected to People () => {
+  var today = new Date();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+  var today = new Date();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  return ` -  ${today} @ ${time}`
+}
+Connected to People () => {
+  var today = new Date();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  return ` -  ${today} @ ${time}`
+}
+Displaying everything from Info () => {
+  var today = new Date();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  return ` -  ${today} @ ${time}`
+}
+Server started! -  Thu Dec 12 2019 19:27:15 GMT-0500 (Eastern Standard Time) @ 19:27:15

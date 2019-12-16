@@ -37,7 +37,7 @@ export class RegisterService {
     console.log('JSON: ' + JSON.stringify(jsonObj))
 
 
-    return this.http.post('http://localhost:3000/addpatron', jsonObj)
+    return this.http.post('http://localhost:5001/addpatron', jsonObj)
       .subscribe((data) => {
         console.log("newly added patron" + data);
         // this.router.navigate(['show'])
@@ -52,15 +52,15 @@ export class RegisterService {
 
   //Calls the express server to return the already scanned patrons
   getPreRegistered(){
-    return this.http.get('http://localhost:3000/preregistered')
+    return this.http.get('http://localhost:5000/preregistered')
   }  
   removeEveryone(){
-    return this.http.get('http://localhost:3000/deletedata')
+    return this.http.get('http://localhost:5000/deletedata')
   }
 
   confirmPerson(id){
     console.log('Service delete: ' + id)
-    var url = 'http://localhost:3000/deleteperson/' + id
+    var url = 'http://localhost:5000/deleteperson/' + id
     console.log('URL: ' + url)
     return this.http.delete(url)
     .subscribe(
