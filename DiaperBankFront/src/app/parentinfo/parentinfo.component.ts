@@ -76,7 +76,9 @@ export class ParentinfoComponent implements OnInit {
         if(this.parentInfoObject.County == null){
           this.parentInfoObject.County = ''
         }
+
         this.parentInfoObject.DOB = params.dob;
+        console.log(this.parentInfoObject.DOB)
         if(this.parentInfoObject.DOB == null){
           this.parentInfoObject.DOB = ''
         }

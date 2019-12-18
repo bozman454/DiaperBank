@@ -46,7 +46,7 @@
   <!-- DOB column -->
   <ng-container matColumnDef="dob">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> DOB </th>
-    <td mat-cell *matCellDef="let patronList"> {{patronList.dob}} </td>
+    <td mat-cell *matCellDef="let patronList"> {{patronList.DOB}} </td>
   </ng-container>
 
   <!-- Address column -->
@@ -67,23 +67,7 @@
     <td mat-cell *matCellDef="let patronList"> {{patronList.state}} </td>
   </ng-container>
 
-  <!-- Zip column -->
-  <ng-container matColumnDef="zip">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Zip </th>
-    <td mat-cell *matCellDef="let patronList"> {{patronList.zip}} </td>
-  </ng-container>
 
-  <!-- County column -->
-  <ng-container matColumnDef="county">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> County </th>
-    <td mat-cell *matCellDef="let patronList"> {{patronList.county}} </td>
-  </ng-container>
-
-  <!-- Phone column -->
-  <ng-container matColumnDef="phone">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
-    <td mat-cell *matCellDef="let patronList"> {{patronList.phone}} </td>
-  </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row (click)="verifyPerson(row)" *matRowDef="let row; columns: displayedColumns;"></tr>

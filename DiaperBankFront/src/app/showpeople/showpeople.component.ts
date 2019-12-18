@@ -40,7 +40,7 @@ export class ShowpeopleComponent implements OnInit {
     this.showPeople();
   }
 
-  displayedColumns: string[] = ['first', 'last', 'dob', 'address', 'city', 'state', 'zip', 'county', 'phone'];
+  displayedColumns: string[] = ['first', 'last', 'dob', 'address', 'city', 'state'];
 
   //When the person is clicked their info is sent to the html so that children can be added
   //Also deletes the person from the DB - not in yet
