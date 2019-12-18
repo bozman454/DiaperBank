@@ -5,6 +5,8 @@ var csvWriter2 = require('csv-write-stream')
 const fs = require('fs');
 
 
+app.use(bp())
+
 const PORT = 5001;
 
 
@@ -34,8 +36,7 @@ const csvWriter = createCsvWriter({
 
 var head = true;
 
-app.post('/addpatron', function (req, res) {
-
+app.post('/addpatron', (req, res)=> {
   if (head == false) {
     var writer = csvWriter2({ sendHeaders: false })
   }
@@ -43,8 +44,8 @@ app.post('/addpatron', function (req, res) {
     var writer = csvWriter2({ sendHeaders: true })
     head = false
   }
-
-  console.log('Attempting to post...')
+  console.log(`Attempting to post...${req.body}`)
+  
   writer.pipe(fs.createWriteStream('patrons.csv', { flags: 'a' }))
   writer.write(req.body)
   writer.end()

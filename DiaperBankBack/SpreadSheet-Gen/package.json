@@ -1,8 +1,8 @@
 {
-  "name": "csv-writer",
+  "name": "spreadsheet-gen",
   "version": "1.0.0",
-  "description": "Writes scanned patrons to to csv for easy import to excel",
-  "main": "server.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,6 +11,8 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "csv-write-stream": "^2.0.0",
-    "express": "^4.17.1"
+    "csv-writer": "^1.5.0",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security"
   }
 }

@@ -186,7 +186,7 @@ export class ParentinfoComponent implements OnInit {
 
   findCounty(zip){
     if (zip.length == 5) {
-      var url = 'http://localhost:3000/getcounty/' + zip
+      var url = 'http://localhost:5000/getcounty/' + zip
       // console.log('URL: ' + url)
       this.http.get(url)
         .subscribe((data) => {

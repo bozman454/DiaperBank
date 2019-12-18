@@ -54,7 +54,7 @@ export class ShowpeopleComponent implements OnInit {
     let county = person.county;
     let phone = person.phone;
     let id = person._id;
-    let dob = person.dob;
+    let dob = person.DOB;
     this.router.navigate(['FamilyReg'], { queryParams: { first, last, dob, address, city, state, zip, county, phone, id } });
 
 

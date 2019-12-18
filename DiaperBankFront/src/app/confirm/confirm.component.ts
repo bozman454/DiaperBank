@@ -92,7 +92,6 @@ export class ConfirmComponent implements OnInit {
     // let childrenArray = this.printChildren(this.confirmInfoObject.childString)
     let childrenString = this.confirmInfoObject.childString;
     var createChildPromise = new Promise((res,rej)=>{
-      console.log("SHE KEEPS MOET ET CHANDON IN HER PRETTY CABINET")
       this.parent.backChildren(childrenString)
       res(1);
     })

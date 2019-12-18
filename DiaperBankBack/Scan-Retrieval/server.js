@@ -3,7 +3,7 @@ const MongoClient = require("mongodb").MongoClient;
 const ObjectId = require('mongodb').ObjectID;
 
 const app = express();
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
@@ -24,12 +24,15 @@ app.get('/preregistered', (req, res) => {
     collection.find({}).toArray((err, result) => {
       if (err) throw err;
       console.log(`Displaying everything from ${COLLECTION_NAME}`);
-      if (result) 
+      if (result)
         res.status(200).send(result);
-      
+
     })
   })
 });
+
+
+
 
 app.get('/deletedata', (req, res) => {
   MongoClient.connect(CONNECTION_URL, { useUnifiedTopology: true, useNewUrlParser: true }, (error, client) => {
@@ -50,8 +53,33 @@ app.get('/deletedata', (req, res) => {
 })
 
 
+app.get('/getcounty/:zip', function (req, res) {
+  var county = '';
+  const csv = require('csv-parser');
+  const fs = require('fs');
+  console.log('Getting county...')
+  fs.createReadStream('uscities.csv')
+    .pipe(csv())
+    .on('data', (row) => {
+      if (row.zips.includes(req.params.zip)) {
+        console.log(row)
+        console.log(row.county_name)
+        if (county == '') {
+          county = row.county_name;
+        }
+      }
+    })
+    .on('end', () => {
+      console.log('County CSV file successfully processed');
+      // console.log('Express County: ' + county)
+      res.status(200).send({ county })
+    });
+
+
+})
+
 app.delete('/deleteperson/:id', (req, res) => {
-  console.log('Trying to delete from database...' )
+  console.log('Trying to delete from database...')
   MongoClient.connect(CONNECTION_URL, { useUnifiedTopology: true, useNewUrlParser: true }, (error, client) => {
     if (error) throw error;
 
