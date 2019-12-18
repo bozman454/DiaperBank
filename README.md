@@ -1,7 +1,7 @@
 # DiaperBank
 
 ## What is DiaperBank? 
-DiaperBank is an application that streamlines the process to support lower class families by distributing diapers for their children. The DiaperBank application uses a combination of technologies such as Angular, Express, and MongoDB. The DiaperBank app digitizes the diaper bank registration forms so that the overall process is far quicker.
+DiaperBank is an application that streamlines walk-up registration.
 
 ## Installation
 - What do other developers need to use this app?
