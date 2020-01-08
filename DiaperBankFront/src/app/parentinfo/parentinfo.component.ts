@@ -76,7 +76,9 @@ export class ParentinfoComponent implements OnInit {
         if(this.parentInfoObject.County == null){
           this.parentInfoObject.County = ''
         }
+
         this.parentInfoObject.DOB = params.dob;
+        console.log(this.parentInfoObject.DOB)
         if(this.parentInfoObject.DOB == null){
           this.parentInfoObject.DOB = ''
         }
@@ -186,7 +188,7 @@ export class ParentinfoComponent implements OnInit {
 
   findCounty(zip){
     if (zip.length == 5) {
-      var url = 'http://localhost:3000/getcounty/' + zip
+      var url = 'http://localhost:5000/getcounty/' + zip
       // console.log('URL: ' + url)
       this.http.get(url)
         .subscribe((data) => {

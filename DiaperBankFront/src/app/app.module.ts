@@ -49,7 +49,7 @@ import { OnlynumDirective } from './directives/numOnlyDirective';
     AboutComponent,
     HelpComponent,
     OnlycharDirective,
-    OnlynumDirective,
+    OnlynumDirective
   ],
   imports: [
     BrowserModule,

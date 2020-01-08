@@ -1,39 +1,22 @@
 # DiaperBank
 
 ## What is DiaperBank? 
+<<<<<<< HEAD
 DiaperBank is an application that streamlines walk-up registration.
+=======
+DiaperBank is an application that streamlines and speeds up the process of registering families for subscription services. The application is progammed using the MEAN stack.
+>>>>>>> betterbranch
 
 ## Installation
-- What do other developers need to use this app?
-- required dependencies
-- Angular Components
-- Package.json installations
-- Express APIs
+- What do other developers need to contribute to this project?
+- NodeJS
 - MongoDB Documentation (Stitch Documentation)
 
-Todo: add more information about infra/environ setup
+Todo: infra/environ setup
 
+## API Usage
+An individual may scan his or her driver's license by using an app called Scannr. Scannr will pull necessary information from the driver's license and store it on a local Mongo database. If entering for a family, parents may then enter their children's information and confirm that all the information entered is correct. Once the information is submitted it is passed to a CSV file and deleted from the database. 
 
-## Usage
-Parents may scan their driver's license by using another app called Scannr. Scannr will pull necessary information from the driver's license and store it on a local Mongo database. Parents may then enter their children's information and confirm that all the information entered is correct. Once the information is submitted it is passed to a CSV file and deleted from the database. 
+## Todo: ADD APIS (swagger)
 
-Todo: add information about the APIs ?
-
-## Credits
-### Project Leads
-Willem Bosman - Product Owner
-
-Spencer Tingley - Scrum Master
-
-### Team Members
-Christina Edmunds - Frontend Developer
-
-Ben Moliterno - Frontend Developer
-
-Donald Norman - Backend Developer
-
-Travis Hoyt - Backend Developer 
-
-Nathan Schmitt - Backend Developer
-
-Dylan Lawson - Backend Developer
+Dylan?

@@ -1,25 +1,30 @@
 <mat-card style='text-align: center;'>
-<mat-card-title>Scanned Patrons:</mat-card-title>
-<mat-card-content>Below are people who have been scanned previously. clicking on the individuals will advance you to the registration page with their information auto filled! The records are stored in a database and should be cleared when convienent. Click: "delete cache" when you wish to do so. use the 'filter' search bar to find people faster. click 'refresh' when you wish to pull data from the databsae again.</mat-card-content>
+  <mat-card-title>Scanned Patrons:</mat-card-title>
+  <mat-card-content>Below are people who have been scanned previously. clicking on the individuals will advance you to
+    the registration page with their information auto filled! The records are stored in a database and should be cleared
+    when convienent. Click: "delete cache" when you wish to do so. use the 'filter' search bar to find people faster.
+    click 'refresh' when you wish to pull data from the databsae again.</mat-card-content>
 </mat-card>
 
 <br>
-<div style="float:right;">
-<button mat-button color='primary' (click)=showPeople()>Refresh</button>
-
-<button mat-button color='warn' (click)=removePeople()>Delete all cached people</button>
+<div style="margin:auto;">
+  <mat-card>
+      <mat-card-content>There are {{patronList.length}} many cached records</mat-card-content>
+      <button mat-button color='primary' (click)=showPeople()>Refresh</button>
+      <button mat-button color='warn' (click)=removePeople()>Delete all cached people</button>
+  </mat-card>
 </div>
 
 <mat-form-field>
-  <input matInput (keyup) = "applyFilter($event.target.value)" placeholder = "Filter">
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
 </mat-form-field>
 
 
 
 
 
-<table mat-table [dataSource] = "dataSource" matSort class = "mat-elevation-z8">
-  
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
   <!-- Id column -->
   <!-- <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
@@ -27,63 +32,46 @@
   </ng-container> -->
 
   <!-- First column -->
-  <ng-container matColumnDef = "first">
+  <ng-container matColumnDef="first">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> First </th>
-    <td mat-cell *matCellDef = "let patronList"> {{patronList.first}} </td>
+    <td mat-cell *matCellDef="let patronList"> {{patronList.first}} </td>
   </ng-container>
 
   <!-- Last column -->
-  <ng-container matColumnDef = "last">
+  <ng-container matColumnDef="last">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Last </th>
-    <td mat-cell *matCellDef = "let patronList"> {{patronList.last}} </td>
+    <td mat-cell *matCellDef="let patronList"> {{patronList.last}} </td>
   </ng-container>
 
-   <!-- DOB column -->
-   <ng-container matColumnDef = "dob">
+  <!-- DOB column -->
+  <ng-container matColumnDef="dob">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> DOB </th>
-    <td mat-cell *matCellDef = "let patronList"> {{patronList.dob}} </td>
+    <td mat-cell *matCellDef="let patronList"> {{patronList.DOB}} </td>
   </ng-container>
 
   <!-- Address column -->
-  <ng-container matColumnDef = "address">
+  <ng-container matColumnDef="address">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
-    <td mat-cell *matCellDef = "let patronList"> {{patronList.address}} </td>
+    <td mat-cell *matCellDef="let patronList"> {{patronList.address}} </td>
   </ng-container>
 
   <!-- City column -->
-  <ng-container matColumnDef = "city">
+  <ng-container matColumnDef="city">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> City </th>
-    <td mat-cell *matCellDef = "let patronList"> {{patronList.city}} </td>
+    <td mat-cell *matCellDef="let patronList"> {{patronList.city}} </td>
   </ng-container>
 
   <!-- State column -->
-  <ng-container matColumnDef = "state">
+  <ng-container matColumnDef="state">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> State </th>
-    <td mat-cell *matCellDef = "let patronList"> {{patronList.state}} </td>
+    <td mat-cell *matCellDef="let patronList"> {{patronList.state}} </td>
   </ng-container>
 
-  <!-- Zip column -->
-  <ng-container matColumnDef = "zip">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Zip </th>
-    <td mat-cell *matCellDef = "let patronList"> {{patronList.zip}} </td>
-  </ng-container>
 
-  <!-- County column -->
-  <ng-container matColumnDef = "county">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> County </th>
-    <td mat-cell *matCellDef = "let patronList"> {{patronList.county}} </td>
-  </ng-container>
 
-  <!-- Phone column -->
-  <ng-container matColumnDef = "phone">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
-    <td mat-cell *matCellDef = "let patronList"> {{patronList.phone}} </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef = "displayedColumns"></tr>
-  <tr mat-row (click) = "verifyPerson(row)" *matRowDef = "let row; columns: displayedColumns;"></tr>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row (click)="verifyPerson(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
 
 </table>
 
-<mat-paginator [pageSizeOptions] = "[10, 20, 50]" showFirstLastButtons></mat-paginator>
-
+<mat-paginator [pageSizeOptions]="[10, 20, 50]" showFirstLastButtons></mat-paginator>
