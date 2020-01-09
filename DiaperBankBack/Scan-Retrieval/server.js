@@ -3,16 +3,20 @@ const MongoClient = require("mongodb").MongoClient;
 const ObjectId = require('mongodb').ObjectID;
 
 const app = express();
+
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
-const CONNECTION_URL = 'mongodb+srv://Bank:willem@persons-1pnrr.mongodb.net/test?retryWrites=true&w=majority';
-const DATABASE_NAME = "People";
-const COLLECTION_NAME = "Info";
-const PORT = 5000;
+
+var config = require('./config.json')
+
+const CONNECTION_URL = config.dbconfig.CONNECTION_URL;
+const DATABASE_NAME = config.dbconfig.DATABASE_NAME;
+const COLLECTION_NAME = config.dbconfig.COLLECTION_NAME;
+const PORT = config.port;
 
 
 app.get('/preregistered', (req, res) => {

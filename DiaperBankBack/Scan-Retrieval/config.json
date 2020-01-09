@@ -1,0 +1,8 @@
+{
+    "port": 5000,
+    "dbconfig":{
+        "CONNECTION_URL": "mongodb+srv://Bank:willem@persons-1pnrr.mongodb.net/test?retryWrites=true&w=majority",
+        "DATABASE_NAME": "People",
+        "COLLECTION_NAME": "Info"
+    }
+}
