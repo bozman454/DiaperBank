@@ -103,6 +103,7 @@
                 <input matInput formControlName='parentDOB' placeholder="Birth Date" [value]='parentInfoObject.DOB'
                         required  #DOB>
                 <mat-hint>mm / dd / yyyy</mat-hint>
+                <!---I took this out because if we use the datepicker we cannot fill the field using the data from our scanned patrons section -->
                 <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle> -->
                 <!-- <mat-datepicker #picker></mat-datepicker> -->
         </mat-form-field>
