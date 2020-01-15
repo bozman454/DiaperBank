@@ -25,7 +25,7 @@ export class ConfirmComponent implements OnInit {
   confirmInfoObject;
   childString;
   // childArray;
-  
+
 
   constructor(private _snackBar : MatSnackBar, private router: Router, private route: ActivatedRoute, public register: RegisterService, public parent: ParentinfoComponent) {
     this.confirmForm = new FormGroup({
@@ -75,10 +75,7 @@ export class ConfirmComponent implements OnInit {
     let childrenArray = this.printChildren(this.confirmInfoObject.childString)
     console.log('childrenarray confirm: ' + childrenArray)
     this.register.pass(first, last, address, city, state, zip, county, dob,  phone, childrenArray, this.confirmInfoObject.id)
-    // .then(
-    //   this.register.confirmPerson(id)
-      
-    // )
+    this.register.confirmPerson(id)
   }
 
   printChildren(s){

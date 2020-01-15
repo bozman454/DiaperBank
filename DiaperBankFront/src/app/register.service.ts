@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class RegisterService {
-  constructor(public http: HttpClient, private router: Router) { 
+  constructor(public http: HttpClient, private router: Router) {
 
   }
 
@@ -25,13 +25,13 @@ export class RegisterService {
     var num = 1
     childrenArray.forEach(element => {
       // jsonObj['child ' + idx++] = element.fname + ' ' + element.lname + ', ' + element.DOB
-      
+
       if((childNum) < numOfChildren){
         jsonObj['child ' + childNum++] = childrenArray[num-1] + ' ' + childrenArray[num] + ', ' + childrenArray[num+1]
         idx = idx +3
         num = num + 3
       }
-    }); 
+    });
 
 
     console.log('JSON: ' + JSON.stringify(jsonObj))
@@ -53,7 +53,7 @@ export class RegisterService {
   //Calls the express server to return the already scanned patrons
   getPreRegistered(){
     return this.http.get('http://localhost:5000/preregistered')
-  }  
+  }
   removeEveryone(){
     return this.http.get('http://localhost:5000/deletedata')
   }
@@ -62,10 +62,7 @@ export class RegisterService {
     console.log('Service delete: ' + id)
     var url = 'http://localhost:5000/deleteperson/' + id
     console.log('URL: ' + url)
-    return this.http.delete(url)
-    .subscribe(
-
-    )
+    return this.http.post(url).subscribe(console.log("deleted person"))
   }
 
 }

@@ -41,14 +41,9 @@ app.get('/preregistered', (req, res) => {
 app.get('/deletedata', (req, res) => {
   MongoClient.connect(CONNECTION_URL, { useUnifiedTopology: true, useNewUrlParser: true }, (error, client) => {
     if (error) throw error;
-
     database = client.db(DATABASE_NAME);
-    //      once you have this object your off to the races
     collection = database.collection(COLLECTION_NAME);
-
     console.log("Connected to " + DATABASE_NAME);
-
-
     collection.remove({})
       .then(result => console.log(`Deleted everything `))
       .catch(err => console.error(`Delete failed with error: ${err}`))
@@ -66,8 +61,6 @@ app.get('/getcounty/:zip', function (req, res) {
     .pipe(csv())
     .on('data', (row) => {
       if (row.zips.includes(req.params.zip)) {
-        console.log(row)
-        console.log(row.county_name)
         if (county == '') {
           county = row.county_name;
         }
@@ -75,24 +68,19 @@ app.get('/getcounty/:zip', function (req, res) {
     })
     .on('end', () => {
       console.log('County CSV file successfully processed');
-      // console.log('Express County: ' + county)
       res.status(200).send({ county })
     });
 
 
 })
 
-app.delete('/deleteperson/:id', (req, res) => {
+app.post('/deleteperson/:id', (req, res) => {
   console.log('Trying to delete from database...')
   MongoClient.connect(CONNECTION_URL, { useUnifiedTopology: true, useNewUrlParser: true }, (error, client) => {
     if (error) throw error;
-
     database = client.db(DATABASE_NAME);
-    //      once you have this object your off to the races
     collection = database.collection(COLLECTION_NAME);
-
     console.log("Connected to " + DATABASE_NAME + ' ');
-
     var idDelete = { _id: ObjectId(req.params.id) }
     collection.deleteOne(idDelete)
       .then(result => console.log(`Deleted ${result.deletedCount} item.`))
@@ -106,4 +94,3 @@ app.delete('/deleteperson/:id', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
 });
-
