@@ -62,7 +62,7 @@ export class RegisterService {
     console.log('Service delete: ' + id)
     var url = 'http://localhost:5000/deleteperson/' + id
     console.log('URL: ' + url)
-    return this.http.post(url).subscribe(console.log("deleted person"))
+    return this.http.post(url,{}).subscribe(res=>console.log("deleted person"))
   }
 
 }
