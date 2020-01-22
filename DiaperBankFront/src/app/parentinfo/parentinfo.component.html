@@ -5,13 +5,21 @@
         to add more children. Click submit to advance to the confirmation page</mat-card-content>
 </mat-card>
 <br>
-<mat-card [formGroup]="parentForm" class="parentForm"
+<form 
+[formGroup]="parentForm" 
+class="parentForm" 
+(ngSubmit)="submitForm(parentForm.value)"
+> 
+
+<mat-card 
         style="width: 850px; align-content: center; display: inline-block; position: absolute; left: 50%; margin-left: -475px">
+
+
         <h3 style="color:#000000;">Parent Information</h3>
         <mat-divider></mat-divider>
         <mat-form-field style="width: 400px">
                 <input matInput placeholder="First Name" formControlName="parentFirstName"
-                        [value]='parentInfoObject.FirstName' charOnly maxlength="30" required #first>
+                        [(ngModel)]='parentInfoObject.FirstName' charOnly maxlength="30" required>
         </mat-form-field>
         <mat-form-field class="childInput" style="width: 400px">
                 <input matInput placeholder="Last Name" formControlName="parentLastName"
@@ -109,8 +117,17 @@
         </mat-form-field>
 
         <mat-form-field class="childInput" style="width: 400px">
-                <input matInput placeholder="Phone Number" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                        formControlName="parentPhone" [value]='parentInfoObject.PhoneNumber' required numOnly #phone>
+                <input 
+                matInput 
+                id="phone"
+                placeholder="Phone Number" 
+                type="tel"
+                formControlName="parentPhone" 
+                [value]='parentInfoObject.PhoneNumber' 
+                required
+                [ngModel]="PhoneNumber"
+                (ngModelChange)="updatePhone()"
+                >
                 <mat-hint>Example: 1234567890</mat-hint>
         </mat-form-field>
 
@@ -126,7 +143,7 @@
 
         <app-childinfo></app-childinfo>
         <br>
-        <button mat-raised-button style="width: 200px; background-color: #A2C93A; color: white" class="right"
-                id="submit"
-                (click)="submit(first.value, last.value, address.value, city.value, state.value, zip.value, county.value, DOB.value, phone.value, parentInfoObject.id)">Submit</button>
+
+        <input type="submit" class="right add-button" [disabled]="!parentForm.valid" value="Add Person"> 
 </mat-card>
+</form>
