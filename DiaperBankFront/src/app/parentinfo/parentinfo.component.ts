@@ -1,5 +1,5 @@
 import { Component, OnInit, NgModule } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core'
 import { Child } from '../child';
@@ -7,6 +7,7 @@ import { ChildinfoComponent } from '../childinfo/childinfo.component'
 import { ParentInfoClass } from '../parentInfoClass'
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { format } from 'url';
 
 @Component({
   selector: 'app-parentinfo',
@@ -23,7 +24,7 @@ import { Router } from '@angular/router';
 
 export class ParentinfoComponent implements OnInit {
 
-  public parentForm
+  public parentForm;
   childArray: Array<Child> = []
   patronList;
   childfirst;
@@ -35,9 +36,16 @@ export class ParentinfoComponent implements OnInit {
   states = [ 'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY' ];
   //public childComp: ChildinfoComponent
   // public register: RegisterService,
-  constructor(public http: HttpClient,  public pinfo: ParentInfoClass, private router: Router,  private route: ActivatedRoute, public child: Child, ) {
+  constructor(
+    public http: HttpClient,  
+    public pinfo: ParentInfoClass, 
+    private router: Router,  
+    private route: ActivatedRoute, 
+    public child: Child, 
+    private formBuilder: FormBuilder,
+    ) {
     
-
+    
     this.parentInfoObject = new ParentInfoClass()
 
     this.route.queryParams.subscribe(params => {
@@ -100,9 +108,9 @@ export class ParentinfoComponent implements OnInit {
       parentAddress: new FormControl('', [Validators.required]),
       parentCity: new FormControl('', [Validators.required]),
       parentState: new FormControl(this.parentInfoObject.State, [Validators.required]),
-      parentZIP: new FormControl('', [Validators.required]),
+      parentZIP: new FormControl('', Validators.compose([Validators.required, Validators.minLength(5)])),
       parentCounty: new FormControl('', [Validators.required]),
-      parentPhone: new FormControl('', [Validators.required]),
+      parentPhone: new FormControl('', Validators.compose([Validators.required, Validators.pattern('[0-9]{10}')])),
       parentDOB: new FormControl('', [Validators.required]),
     });  
   }
@@ -111,23 +119,62 @@ export class ParentinfoComponent implements OnInit {
     this.parentForm.get('parentPhone').setValue('');   
   } 
 
-  phoneFormat(str, key) {
-    /*console.log("str: " + str)
-    console.log("key: " + key)
+  updatePhone() {
+    let currentPhoneString = document.getElementById('phone').value;
 
-    if (key.match("[0-9]")) {
+    // start by parsing out all special characters
+    // leaving us with the raw number
+    let rawPhoneNumberString = currentPhoneString
+    .replace('(', '')
+    .replace(')', '')
+    .replace('-', '')
+    .replace(' ', '');
 
-    } else if (key.match("[(]") | key.match("[)]")) {
-      console.log("paren")  
-    } else if (key.match("[A-Za-z]")) {
-      //console.log(str.slice(0, str.length - 1))
-      this.parentForm.get('parentPhone').setValue(str.slice(0, str.length - 1))
-    }*/
+    // Format the phone number such that it inputs nicely
+    let numberLength = rawPhoneNumberString.length;
+    let formattedString = '';
+    if(numberLength === 0) {
+      // There is no number, keep the string empty
+    }
+    else if(numberLength < 4) {
+      // We just have the area code. Put the parenthesis at the start
+      formattedString += '(' + parseInt(rawPhoneNumberString);
+    }
+    else if(numberLength < 7) {
+      // We have the first part for the main phone number, 
+      // add both parentheses for the area code and a space
+      formattedString += '(' 
+      + parseInt(rawPhoneNumberString.substring(0,3))
+      + ') '
+      + parseInt(rawPhoneNumberString.substring(3));
+    }
+    else {
+      // We are past the hyphen
+      formattedString += '(' 
+      + parseInt(rawPhoneNumberString.substring(0,3))
+      + ') '
+      + parseInt(rawPhoneNumberString.substring(3,6))
+      + '-'
+      + parseInt(rawPhoneNumberString.substring(6));
+    }
 
-    //this.parentForm.get('parentPhone').setValue(str.replace('/^([0-9])/gi', ''))
+    // Now, set the string in the element
+    this.parentInfoObject.PhoneNumber = formattedString;
+
   }
 
-  submit(first, last, address, city, state, zip, county, dob, phone, id){
+  submitForm(post) {
+    let first = post.parentFirstName;
+    let last = post.parentLastName;
+    let address = post.parentAddress;
+    let city = post.parentCity;
+    let state = post.parentState;
+    let zip = post.parentZIP;
+    let county = post.parentCounty;
+    let dob = post.parentDOB;
+    let phone = post.parentPhone;
+    let id = post.id;
+
     if(first && last  && address && city && state && zip && county && dob && phone){
       if(this.childArray[0] != null) { 
         var childString = '';
@@ -142,8 +189,10 @@ export class ParentinfoComponent implements OnInit {
       } else {
         window.alert("You have not added any childeren to this form!");
       }
+    } else {
+      window.alert("Please fill all required fields")
     }
-    
+
   }
 
 
